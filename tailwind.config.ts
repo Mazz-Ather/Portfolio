@@ -9,10 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
+      },
+      backgroundImage: {
+        circularLight: 'repeating-radial-gradient(black 2px, white 5px, white 100px)',
       },
     },
+    screens:{
+      '2xl':{max:'1535px'},
+
+      xl:{max:'1279px'},
+      lg:{max:'767px'},
+      sm:{max:'639'},
+      xs:{max:'479px'}
+    }
   },
   plugins: [],
 };
