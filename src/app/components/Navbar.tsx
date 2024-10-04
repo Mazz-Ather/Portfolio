@@ -4,10 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "@/app/components/Logo";
 import { useRouter } from "next/navigation";
-import projects from "@/app/projects/page";
-import about from "@/app/about/page";
 import { usePathname } from "next/navigation";
-import { div } from "framer-motion/client";
 import { motion } from "framer-motion";
 
 const MobileLink = ({

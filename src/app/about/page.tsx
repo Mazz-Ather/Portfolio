@@ -5,7 +5,6 @@ import Image from "next/image";
 // import Img from "@/public/bgAbout.jpg";
 import Navbar from "../components/Navbar";
 import Img from '@/public/schoolpic.jpg'
-import Footer from "../components/Footer";
 
 
 const about = () => {
@@ -19,7 +18,7 @@ const about = () => {
       <AnimateText
         text="Passion drives my vision!"
         className="font-bold text-[75px] text-pretty -left-52 !text-white absolute top-1
-         w-[80vw] z-10"
+         w-[75vw] z-10"
         />
       <main className="flex w-[80vw] h-[90vh] items-center justify-center relative z-20">
         

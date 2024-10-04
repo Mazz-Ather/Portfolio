@@ -13,12 +13,12 @@ import discord from '@/public/discord.jpg'
   
 const AnimateLogo = ({ name, x, y }: { name: string; x: string; y: string }) => {
     return(
-    <motion.div className="flex items-center justify-center rounded-full font-semibold  text-red-700 text-3xl contrast-200 px-5 
+    <motion.div className="flex items-center justify-center rounded-full font-semibold  text-black text-3xl contrast-200 px-5 
     py-5 shadow-gray-600 absolute"
          whileHover={{scale:1.05}}
          initial = {{x:0 , y:0}}
          animate = {{x:x , y:y}}
-         transition={{duration:4.1}}
+         transition={{duration:1}}
          >
               {name}
          </motion.div>

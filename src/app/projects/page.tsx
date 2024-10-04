@@ -1,10 +1,7 @@
 "use client";
 import AnimateText from "../components/AnimatedText";
 import Image from "next/image";
-import Head from "next/head";
-// import {GithubIcon} from "@/app/assests/canva-edit.png"
 import Navbar from "../components/Navbar";
-import { div } from "framer-motion/client";
 import Link from "next/link";
 import project1 from "@/public/significo.jpg";
 
