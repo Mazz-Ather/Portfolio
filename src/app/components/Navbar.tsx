@@ -31,7 +31,7 @@ const MobileLink = ({
       {" "}
       {title}
       <span
-        className={`h-[1px] inline-block bg-black absolute left-0 -bottom-0.5 group-hover:w-full transform-[width] ease duration-300 ${
+        className={`h-[1px] inline-block  absolute left-0 -bottom-0.5 group-hover:w-full transform-[width] ease duration-300${
           currentPath === href ? "w-full" : "w-0"
         } dark:bg-white `}
       >
@@ -51,9 +51,9 @@ const Navbar = () => {
 
   return (
     <header className="bg-black h-24 w-full text-[20px] px-36 py-12 font-medium flex items-center justify-between relative">
-      {/* logo */}
+      {/* hamburger */}
       <button
-        className=" flex-col items-center justify-center hidden lg:flex "
+        className=" flex-col items-center justify-center md:hidden xl:hidden lg:hidden block -ml-20"
         onClick={handleClick}
       >
         <span
@@ -73,7 +73,7 @@ const Navbar = () => {
         ></span>
       </button>
       {/* main navbar?? */}
-      <div className="w-full flex justify-between items-center lg:hidden">
+      <div className="w-full flex justify-between items-center xs:hidden sm:hidden xxs:hidden md:block lg:block xl:block lg:ml-[450px] xl:[600px]">
         <Logo />
         <nav className="mx-6">
           <Link
@@ -93,7 +93,14 @@ const Navbar = () => {
           >
             Skills
           </Link>
-
+          <Link
+            href="/extra"
+            className={`${
+              pathname === "/extra" ? "text-blue-500" : "text-white"
+            } font-bold text-xl  mx-4`}
+          >
+            Extra
+          </Link>
           <Link
             href="/projects"
             className={`${
@@ -128,7 +135,7 @@ const Navbar = () => {
       <motion.div 
        initial ={{scale:0 , opacity:0 , x:-'50%' , y:'50%'}}
        animate = {{scale :1 ,opacity:1}}
-      className="min-w-[70vw] flex flex-col justify-between items-center z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 black:bg-white/90  rounded-lg  backdrop-blur-md py-32">
+      className="min-w-[70vw] flex flex-col justify-between items-center z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 black:bg-white/90 rounded-lg  backdrop-blur-md py-32">
       <Logo />
       <nav className="flex items-center flex-col justify-center">
         <MobileLink

@@ -8,8 +8,8 @@ import facebook from "@/app/assests/facebook.svg";
 import instagram from "@/app/assests/instagram.svg";
 import gmail from "@/app/assests/gmail.svg";
 import {motion} from 'framer-motion'
-import github from "@/public/github.jpg"
-import discord from '@/public/discord.jpg'
+import github from "/public/github.jpg"
+import discord from '/public/discord.jpg'
   
 const AnimateLogo = ({ name, x, y }: { name: string; x: string; y: string }) => {
     return(

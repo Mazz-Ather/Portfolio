@@ -20,7 +20,7 @@ const Skill = ({ name, x, y }: { name: string; x: string; y: string }) => {
 const Skills = () => {
   return (
     <>
-      <div className="!bg-gray-500 text-red-500">
+      <div className="!bg-white z-20">
         <Navbar />
       </div>
       <h2 className="!bg-white font-bold text-8xl -mb-4 w-full flex items-center justify-center text-black ">

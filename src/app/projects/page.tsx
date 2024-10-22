@@ -3,15 +3,15 @@ import AnimateText from "../components/AnimatedText";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
-import project1 from "@/public/significo.jpg";
+import project1 from "/public/significo.jpg";
 
-import project2 from "@/public/product.jpg";
+import project2 from "/public/product.jpg";
 
-import project3 from "@/public/movie3.jpg";
+import project3 from "/public/movie3.jpg";
 
-import project4 from "@/public/iphone.jpg";
+import project4 from "/public/iphone.jpg";
 
-import project5 from "@/public/cuberto.jpg";
+import project5 from "/public/cuberto.jpg";
 const FeaturedProjects = ({
   type,
   summary,
@@ -53,7 +53,7 @@ const FeaturedProjects = ({
           <Link
             href={link}
             target="-blank"
-            className="rounded p-3 -m-20 bottom-[212px] right-[610px] absolute  bg-gray-600 text-white font-semibold hover:bg-red-700 hover:contrast-125 hover:p-[13px]"
+            className="rounded p-3 -m-20 bottom-[210px] right-[610px] absolute  bg-gray-600 text-white font-semibold hover:bg-red-700 hover:contrast-125 hover:p-[13px]"
           >
             Visit Projects
           </Link>
@@ -121,7 +121,7 @@ const Projects = () => {
         <div>
           <AnimateText
             text="See my amazing creations!"
-            className="mt-2 -mb-1 ml-12 !text-black contrast-200 !font-bold !text-7xl capitalize"
+            className="mt-6 mb-4 ml-12 !text-black contrast-200 !font-bold !text-7xl capitalize"
           />
           {/* ?main */}
           <div className="grid grid-col-12 gap-24 mt-6">
