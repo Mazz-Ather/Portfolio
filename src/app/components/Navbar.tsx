@@ -94,14 +94,6 @@ const Navbar = () => {
             Skills
           </Link>
           <Link
-            href="/extra"
-            className={`${
-              pathname === "/extra" ? "text-blue-500" : "text-white"
-            } font-bold text-xl  mx-4`}
-          >
-            Extra
-          </Link>
-          <Link
             href="/projects"
             className={`${
               pathname === "/projects" ? "text-blue-500" : "text-white"
