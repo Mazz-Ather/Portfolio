@@ -49,7 +49,6 @@ const MobileLink: React.FC<MobileLinkProps> = ({
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => setIsOpen(!isOpen);
-  const router = useRouter();
   const pathname = usePathname();
 
   return (

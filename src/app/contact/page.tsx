@@ -10,6 +10,7 @@ import gmail from "@/app/assests/gmail.svg";
 import {motion} from 'framer-motion'
 import github from "/public/github.jpg"
 import discord from '/public/discord.jpg'
+
   
 const AnimateLogo = ({ name, x, y }: { name: string; x: string; y: string }) => {
     return(
@@ -66,7 +67,7 @@ const Boxes = ({
 
 
 const Contact = ()=>{
-    return(
+    
         <>
         <Navbar/>
         <AnimatedText text = "Let's Connect Together" className="!text-black !font-extrabold !text-6xl mt-2 mb-2 "/>
@@ -139,6 +140,6 @@ const Contact = ()=>{
           <AnimateLogo name='Discord' x='72vw' y='-11vw'/>     
         
         </>
-    )
+    
 }
 export default Contact
