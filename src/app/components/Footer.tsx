@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Footer() {
     return (
-        <footer className="bg-[#4e4d4c] text-black w-full px-4 py-8  md:px-8 lg:px-16 xl:px-24 2xl:px-64">
-           <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24">
+        <footer className="bg-[#4e4d4c] text-black w-full px-4 py-8 md:px-8 lg:px-16 xl:px-24 2xl:px-64">
+            <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24">
                 {/* LEFT */}
                 <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-7">
                     <Link href={'/'} className="text-2xl text-red-500 font-serif contrast-200">
@@ -42,7 +43,7 @@ export default function Footer() {
                 {/* RIGHT */}
                 <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-7">
                     <h2 className="text-white/80 text-xl hover:text-red-500 transition-all duration-300">SUBSCRIBE</h2>
-                    <p className="text-white/80 text-lg lg:text-xl">Let's Connect Together</p>
+                    <p className="text-white/80 text-lg lg:text-xl">Let&apos;s Connect Together</p>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <input 
                             type="email" 
@@ -54,16 +55,15 @@ export default function Footer() {
                         </button>
                     </div>
                 </div>
-           </div>
+            </div>
 
-           {/* BOTTOM */}
-           <div className="flex items-center justify-center py-4 border-t border-white/20 mt-12">
-               {/* <FaCopyright className="text-white/80 mr-2" /> */}
-               <span>&copy;</span>
-               <span className="text-white/80 text-sm">
-                   {new Date().getFullYear()}. All rights reserved.
-               </span>
-           </div>
+            {/* BOTTOM */}
+            <div className="flex items-center justify-center py-4 border-t border-white/20 mt-12">
+                <span>&copy;</span>
+                <span className="text-white/80 text-sm">
+                    {new Date().getFullYear()}. All rights reserved.
+                </span>
+            </div>
         </footer>
     )
 }

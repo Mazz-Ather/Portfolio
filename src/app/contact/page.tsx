@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Navbar from "../components/Navbar";
 import AnimatedText from "../components/AnimatedText";
 import linkdin from "@/app/assests//linkedin.svg";
@@ -32,9 +32,9 @@ const Boxes = ({
     link,
     img
   }: {
-    title: any;
-    link: any;
-    img:any
+    title: string;  // Changed from any to string
+    link: string;   // Changed from any to string
+    img: StaticImageData;    // Changed from any to string
   }) => {
     return (
     <article className="mb-16  w-[22vw] h-[15vh] flex items-center justify-center rounded-2xl border-l-2 border-r-8 border-t-2 border-b-8  border-black relative">
