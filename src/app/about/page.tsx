@@ -42,7 +42,7 @@ export default function Slide1(){
                 ability to innovate and execute.
               </p>
 
-              <p className="xxs:text-[19px] xxs:m-3 xxs:font-semibold xs:text-[20px] xs:m-3 xs:font-semibold text-black/70  sm:text-[22px] text-lg mt-9 xs:w-47 text-center md:text-[18px] md:-ml-24 md:w-[68%] lg:text-[21px] lg:font-medium lg:text-center lg:w-[80%] lg:ml-20 xl:-ml-6 border-b-[6px] xl:w-max p-3 border-t-[6px] border-[#000000] mx-5"style={{ clipPath: 'polygon(2% 4%, 98% 0%, 97% 97%, 0% 100%)' }}> &nbsp; I approach each project with a dedication to design excellence
+              <p className="xxs:text-[19px] xxs:m-3 xxs:font-semibold xs:text-[20px] xs:m-3 xs:font-semibold text-black/70  sm:text-[22px] text-lg mt-9 xs:w-47 text-center md:text-[18px] md:-ml-24 md:w-[68%] lg:text-[21px] lg:font-medium lg:text-center lg:w-[80%] lg:ml-20 xl:-ml-6 border-b-[6px] xl:w-max p-3 border-t-[6px] border-[#000000] mx-5 "style={{ clipPath: 'polygon(2% 4%, 98% 0%, 97% 97%, 0% 100%)' }}> &nbsp; I approach each project with a dedication to design excellence
                 and a user-centered mindset, ensuring a seamless experience for
                 users while achieving my client's goals.
               </p>

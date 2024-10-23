@@ -1,5 +1,4 @@
 "use client";
-import AnimateText from "../components/AnimatedText";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
@@ -12,179 +11,67 @@ import project3 from "/public/movie3.jpg";
 import project4 from "/public/iphone.jpg";
 
 import project5 from "/public/cuberto.jpg";
-const FeaturedProjects = ({
-  type,
-  summary,
-  img,
-  link,
-}: {
-  type: string;
-  summary: string;
-  img: any;
-  link: string;
-}) => {
-  return (
-    <article className="flex w-[80vw] -mr-[90px] rounded-2xl border-l-2 border-r-8 border-t-2 border-b-8  border-yellow-500 bg-black text-white/70">
-      <Link
-        href={link}
-        target="-blank"
-        className=" cursor-pointer rounded-full "
-      >
-        <Image
-          src={img}
-          alt={"title"}
-          className="w-[40vw] h-[320px] object-cover contrast-125  "
-        />
-      </Link>
-
-      <div
-        className="flex flex-col items-center justify-between pl-6 w-3/5  
-        "
-      >
-        <span className="text-red-700 contrast-200 font-bold text-[28px] p-7">
-          {type}
-        </span>
-        <Link href={link} target="-blank"></Link>
-        <p className="font-bold text-[17px] -mx-[155px] mb-9 mr-1 w-[380px]">
-          {summary}
-        </p>
-        <div>
-          {/* <Link href={github} target="-blank"><GithubIcon/></Link> */}
-          <Link
-            href={link}
-            target="-blank"
-            className="rounded p-3 -m-20 bottom-[210px] right-[610px] absolute  bg-gray-600 text-white font-semibold hover:bg-red-700 hover:contrast-125 hover:p-[13px]"
-          >
-            Visit Projects
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-};
-
-const SmallProjects = ({
-  title,
-  type,
-  img,
-  link,
-}: {
-  title: any;
-  type: any;
-  img: any;
-  link: any;
-}) => {
-  return (
-    <article className="mb-16 px-11   h-[50vh] flex items-center justify-center rounded-2xl border border-solid border-white   bg-black relative">
-      <Link
-        href={link}
-        target="_blank"
-        className="w-full h-full cursor-pointer rounded-2xl"
-      >
-        <Image
-          src={img}
-          alt={title}
-          className="w-[90vh] -mx-11 py-4 h-full object-fill brightness-100"
-        />
-      </Link>
-
-      <div className="w-[37%]  flex flex-col items-center justify-between -mx-9 h-full">
-        <span className="text-red-500 font-bold text-[22px]  contrast-200 mt-6 p-2">
-          {type}
-        </span>
-        <Link href={link} target="_blank">
-          <h2 className="font-bold mb-36 mx-1 text-4xl hover:underline underline-offset-2 bg-black text-white">
-            {title}
-          </h2>
-        </Link>
-
-        <div className="-mt-32 mb-9">
-          <Link
-            href={link}
-            target="_blank"
-            className="rounded  mr-20 py-2 px-7 bg-gray-600 text-white text-lg font-bold hover:bg-red-600 contrast-200"
-          >
-            Visit
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-};
 
 const Projects = () => {
   return (
     <>
       <Navbar />
 
-      <main className="flex flex-col items-center justify-between !bg-gray-400 h-fit -mt-4">
-        <div>
-          <AnimateText
-            text="See my amazing creations!"
-            className="mt-6 mb-4 ml-12 !text-black contrast-200 !font-bold !text-7xl capitalize"
-          />
-          {/* ?main */}
-          <div className="grid grid-col-12 gap-24 mt-6">
-            <div className="col-span-12 !h-[10px]">
-              <div className="!w-[45px] items-center justify-center object-fill p-7 mx-14 -mt-7 ">
-                {/* feature 1  */}
-                <h1 className="mx-[530px] mt-[90px] w-1/4 text-6xl font-bold absolute text-white">
-                  Movie Hub
-                </h1>
-                <FeaturedProjects
-                  summary="I built this movie website using HTML, CSS, and JavaScript, allowing users to browse and stream movies with a clean, responsive design."
-                  img={project3}
-                  link="https://movie-website-chi-peach.vercel.app/"
-                  type="Featured Project"
-                />
-              </div>
-            </div>
-          </div>
-          {/* small 1 */}
-          <div className="grid grid-cols-12 gap-20  w-[1200px]">
-            <div className="col-span-6  mt-96 mx-4">
-              <SmallProjects
-                title="Cuberto's Web Clone"
-                img={project5}
-                link="https://cuberto-eight.vercel.app/"
-                type="Featured Project"
-              />
-            </div>
-            {/* small 2 */}
-            <div className="col-span-6 mt-96 mx-4">
-              <SmallProjects
-                title="Significo's Web Clone"
-                img={project1}
-                link="https://clone-website-significo.vercel.app/"
-                type="Featured Project"
-              />
-            </div>
-          </div>
-          {/* ?emd side by side 2 divs */}
+      
+      <section className="bg-gray-900 text-gray-100 contrast-125">
+	<div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 ">
+		<Link rel="" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50 border border-t-4 border-r-8 border-b-8 border-l-4 border-yellow-500  p-1 ">
+			<Image src={project3} alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500" />
+			<div className="p-6 space-y-2 lg:col-span-5">
+				<h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline hover:underline-offset-8 mt-16">Movie Website</h3>
+				<span className="text-sm dark:text-gray-600 capitalize">February 19, 2021</span>
+				<p className="capitalize">I made this Website By using HTML CSS  and JavaScript , and this  website is fully responsive and it is a fully functional website .  </p>
 
-          {/* small 3 */}
-          <div className="grid grid-cols-12 gap-20  w-[1200px]">
-            <div className="col-span-6 mx-4">
-              <SmallProjects
-                title="P.Design Web Clone"
-                img={project2}
-                link="https://clone-website-significo-qzfo.vercel.app/"
-                type="Featured Project"
-              />
-            </div>
-            {/* small 4 */}
-            <div className="col-span-6">
-              <SmallProjects
-                title="Apple's Clone Website"
-                img={project4}
-                link="https://apple-web-01.vercel.app/"
-                type="Featured Project"
-              />
-            </div>
-          </div>
-          {/* ?emd side by side 2 divs */}
-        </div>
-      </main>
+			</div>
+		</Link>
+		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			<Link rel="https://clone-website-significo.vercel.app/" href="https://clone-website-significo.vercel.app/" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50">
+				<Image src={project1} alt="project2" className="object-cover w-full rounded h-44 dark:bg-gray-500"  />
+				<div className="p-6 space-y-2">
+					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">Signifo's  Website</h3>
+
+					<span className="text-xs dark:text-gray-600 capitalize">January 21, 2024</span>
+					<p>This  is a website made by me using HTML CSS and JavaScript , this  website is made for Signifo's company , i  made this website for them to show case their products .</p>
+
+
+
+
+				</div>
+			</Link>
+			<Link rel="https://clone-website-significo-qzfo.vercel.app/" href="https://clone-website-significo-qzfo.vercel.app/" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50">
+				<Image src={project2} alt="project3"  className="object-cover w-full rounded h-44 dark:bg-gray-500"  />
+				<div className="p-6 space-y-2">
+					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">Product Designer Website</h3>
+					<span className="text-xs dark:text-gray-600 capitalize">March 22, 2024</span>
+					<p>This  is a website made by me using HTML CSS and JavaScript .</p>
+				</div>
+			</Link>
+			<Link rel="" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50">
+				<Image src={project4 } alt="project4" className="object-cover w-full rounded h-44 dark:bg-gray-500" />
+				<div className="p-6 space-y-2">
+					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">Apple Wesbite Clone</h3>
+					<span className="text-xs dark:text-gray-600">April 23, 2021</span>
+					<p>This  is a website made by me using HTML CSS and JavaScript , fully  responsive and fully functional website .</p>
+
+				</div>
+			</Link>
+			<Link rel="" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50 hidden sm:block">
+				<Image src={project5} alt="project5" className="object-cover w-full rounded h-44 dark:bg-gray-500"  />
+				<div className="p-6 space-y-2">
+					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">Cuberto's Clone</h3>
+					<span className="text-xs dark:text-gray-600">January 24, 2021</span>
+					<p>This  is a website made by me using HTML CSS and JavaScript , fully  responsive and fully functional website .</p>
+				</div>
+			</Link>
+			<button type="button" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-50 dark:text-gray-600">more posts coming soon...</button>
+		</div>
+	</div>
+</section>
     </>
   );
 };

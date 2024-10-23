@@ -1,11 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import facebook from "/public/facebook.svg"
-import instagram from "/public/instagram.svg"
-import linkedin from "/public/linkedin.svg"
-import gmail from "/public/gmail.svg"
-// import {FaCopyright} from "react-icons/fa6"
-// &copy;
 export default function Footer() {
     return (
         <footer className="bg-[#4e4d4c] text-black w-full px-4 py-8  md:px-8 lg:px-16 xl:px-24 2xl:px-64">

@@ -2,12 +2,9 @@
 
 import Image from "next/image"
 import suitPic from "/public/my-pic.png";
-import suitpic2 from "/public/img3.jpg"
 import AnimateText from "../components/AnimatedText";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
-import img1  from "/public/myimg1.jpg";
-
 
 
 export default function Slide1(){

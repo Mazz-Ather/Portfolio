@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { del, div, span } from "framer-motion/client";
-import { motion, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 
 const quote = {
   initial: {

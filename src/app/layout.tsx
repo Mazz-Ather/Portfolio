@@ -1,6 +1,4 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Icons from "./components/Icons";
 import Footer from "./components/Footer";
 
 export default function RootLayout({
