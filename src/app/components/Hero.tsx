@@ -3,18 +3,13 @@
 import Image from "next/image"
 import suitPic from "/public/my-pic.png";
 import AnimateText from "../components/AnimatedText";
-import Navbar from "../components/Navbar";
 import Link from "next/link";
-import { ScrollBasedVelocityDemo } from "./velocity";
 import { Vortex } from "./Vortex";
 import ButtonHover11 from "../components/Button";
 
 export default function Slide1(){
     return (
         <>
-        {/* <div>
-            <Navbar/>
-        </div> */}
         <div>
             <div className="flex flex-col  md:flex-row h-min w-full xxs:h-auto 2xl:mt-28 bg-[#091b2a] md:bg-black lg:bg-black xl:bg-black">
                 <div className="h-[60%] flex flex-col justify-center items-center flex-1">

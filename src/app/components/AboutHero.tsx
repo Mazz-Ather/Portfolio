@@ -1,7 +1,7 @@
 'use client';
-
+import Image from 'next/image';
 import React, { useRef } from 'react';
-import { ChevronsRight, Github } from 'lucide-react';
+import { Github, Link } from 'lucide-react';
 import { TimelineContent } from '@/components/ui/framer-timeline';
 
 function TimelineAnimation() {
@@ -14,8 +14,10 @@ function TimelineAnimation() {
         ref={heroRef}
       >
         <TimelineContent animationNum={0} timelineRef={heroRef}>
-          <img
-            src='myimg3.jpg'
+          <Image
+            src='/myimg3.jpg'
+            height={1000}
+            width={1000}
             className='w-full h-[570px]  object-cover rounded-md '
             alt=''
           />
@@ -35,14 +37,14 @@ My dedication to continuous learning and my proven track record of delivering hi
             </p>
           </TimelineContent>
           <TimelineContent animationNum={3} timelineRef={heroRef}>
-            <a
+            <Link 
               className='flex gap-2 w-fit bg-gray-800 rounded-md p-2'
               href='https://github.com/Mazz-Ather'
               target='_blank'
             >
               <Github />
               Start it Now
-            </a>
+            </Link>
           </TimelineContent>
         </div>
       </section>
@@ -55,12 +57,12 @@ My dedication to continuous learning and my proven track record of delivering hi
           <TimelineContent animationNum={2} timelineRef={aboutRef}>
             <p className='text-xl leading-[130%]'>
            
-I prioritize open communication and collaboration, ensuring I fully understand my clients' visions before transforming them into reality. My commitment to quality and attention to detail have consistently resulted in satisfied clients who appreciate the innovation I bring to each project. <br />
+I prioritize open communication and collaboration, ensuring I fully understand my clients &apos; visions before transforming them into reality. My commitment to quality and attention to detail have consistently resulted in satisfied clients who appreciate the innovation I bring to each project. <br />
 My approach focuses on crafting seamless user experiences while leveraging the latest technologies. I view each project as an opportunity to innovate, and I take pride in delivering results that not only meet but exceed expectations, helping clients stand out in a competitive digital landscape.😍
             </p>
           </TimelineContent>
           <TimelineContent animationNum={3} timelineRef={aboutRef}>
-            <a
+            <Link
               className='flex gap-2 items-center w-fit bg-gray-800 rounded-md p-2'
               href='https://x.com/Mazz-Ather'
               target='_blank'
@@ -72,14 +74,16 @@ My approach focuses on crafting seamless user experiences while leveraging the l
 
 
               Follow
-            </a>
+            </Link>
           </TimelineContent>
         </div>
         <TimelineContent animationNum={0} timelineRef={aboutRef}>
-          <img
-            src='myimg4.jpg'
+          <Image
+            src='/myimg4.jpg'
             className='w-full h-[550px]  object-cover rounded-md '
             alt=''
+            height={1650}
+            width={1700}
           />
         </TimelineContent>
       </section>

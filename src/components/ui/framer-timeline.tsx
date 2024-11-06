@@ -1,4 +1,4 @@
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 export const TimelineContent = ({
   children,

@@ -11,7 +11,7 @@ const NewsLatterBox = () => {
         Subscribe to receive future updates
       </h3>
       <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-[16px] font-medium text-body-color dark:border-white dark:border-opacity-50">
-      "Stay updated with the latest news, special offers, and exclusive content tailored just for you. Sign up and be the first to know about our latest updates and insights."
+      &quot;Stay updated with the latest news, special offers, and exclusive content tailored just for you. Sign up and be the first to know about our latest updates and insights.&quot;
       </p>
       <div>
         <input

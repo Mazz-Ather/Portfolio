@@ -18,20 +18,19 @@ export const Cover = ({
 
   const [containerWidth, setContainerWidth] = useState(0);
   const [beamPositions, setBeamPositions] = useState<number[]>([]);
-
   useEffect(() => {
     if (ref.current) {
-      setContainerWidth(ref.current?.clientWidth ?? 0);
-
-      const height = ref.current?.clientHeight ?? 0;
-      const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
+      setContainerWidth(ref.current.clientWidth ?? 0);
+      const height = ref.current.clientHeight ?? 0;
+      const numberOfBeams = Math.floor(height / 10);
       const positions = Array.from(
         { length: numberOfBeams },
         (_, i) => (i + 1) * (height / (numberOfBeams + 1))
       );
       setBeamPositions(positions);
     }
-  }, [ref.current]);
+  }, []); // Empty dependency array
+  
 
   return (
     <div
@@ -212,7 +211,7 @@ export const Beam = ({
 
 export const CircleIcon = ({
   className,
-  delay,
+  
 }: {
   className?: string;
   delay?: number;

@@ -1,5 +1,4 @@
 import React from 'react';
-import TimelineAnimation from './AboutHero';
 
 const StatsSection: React.FC = () => {
   return (
@@ -8,7 +7,7 @@ const StatsSection: React.FC = () => {
         <h2 className="text-3xl font-bold  sm:text-4xl">Trusted by Innovative Brands</h2>
 
         <p className="mt-4 text-gray-500 sm:text-xl">
-        "I specialize in transforming ideas into high-performance websites. My passion for Next.js ensures that each project is optimized for speed and scalability, delivering seamless user experiences. I am dedicated to understanding my clients' unique needs, enabling me to craft tailored solutions that drive success. Let's build something amazing together!"
+          &quot;I specialize in transforming ideas into high-performance websites. My passion for Next.js ensures that each project is optimized for speed and scalability, delivering seamless user experiences. I am dedicated to understanding my clients&apos; unique needs, enabling me to craft tailored solutions that drive success. Let&apos;s build something amazing together!&quot;
         </p>
       </div>
 

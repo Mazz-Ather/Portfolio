@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import KeenSlider, { KeenSliderInstance } from 'keen-slider'
 import 'keen-slider/keen-slider.min.css'
+import Image from 'next/image'
 
 const Testimonials = () => {
   const [sliderInstance, setSliderInstance] = useState<KeenSliderInstance | null>(null)
@@ -112,9 +113,11 @@ const Testimonials = () => {
               <div key={i} className="keen-slider__slide opacity-40 transition-opacity duration-500">
                 <blockquote className="rounded-lg bg-gray-900 p-6 shadow-sm sm:p-8">
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       alt={review.name}
                       src={review.image}
+                      height={20}
+                      width={20}
                       className="size-14 rounded-full object-cover"
                     />
                     <div>
@@ -130,11 +133,12 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <div className="flex justify-center gap-4 mt-3 text-white font-semibold -z-10">
+          <div className="flex justify-center gap-4 mt-3  text-white font-semibold -z-10">
             <button 
               onClick={goToPrevious} 
               id="keen-slider-previous" 
               disabled={!sliderInstance}
+              className=''
             >
               Previous
             </button>

@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -27,15 +26,16 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyNavbar);
   });
 
-  // submenu handler
-  const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index: any) => {
-    if (openIndex === index) { 
-      setOpenIndex(-1);
-    } else {
-      setOpenIndex(index);
-    }
-  };
+   // submenu handler
+const [openIndex, setOpenIndex] = useState<number>(-1);  // Specify type of openIndex as number
+
+const handleSubmenu = (index: number) => {  // Change type of index to number
+  if (openIndex === index) { 
+    setOpenIndex(-1);
+  } else {
+    setOpenIndex(index);
+  }
+};
 
   const usePathName = usePathname();
 
