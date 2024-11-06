@@ -68,16 +68,34 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		animation: {
+  			meteor: 'meteor 5s linear infinite'
+  		},
+  		keyframes: {
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(215deg) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(215deg) translateX(-500px)',
+  					opacity: '0'
+  				}
+  			}
   		}
   	},
-      screens: {
-		'xxs':'200px',
-        'xs': '322px',
-        'sm': '590px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1400px',
-	}
+  	screens: {
+  		xxs: '200px',
+  		xs: '322px',
+  		sm: '590px',
+  		md: '768px',
+  		lg: '1024px',
+  		xl: '1400px'
+  	}
   },
   plugins: [require("tailwindcss-animate")],
 };

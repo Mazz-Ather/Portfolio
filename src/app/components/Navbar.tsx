@@ -1,123 +1,182 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import Logo from "@/app/components/Logo";
-import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+// import ThemeToggler from "./ThemeToggler";
+import menuData from "./menuData";
+import Logo from "./Logo";
 
-interface MobileLinkProps {
-  href: string;
-  title: string;
-  className?: string;
-  toggle: () => void;
-}
-
-const MobileLink: React.FC<MobileLinkProps> = ({
-  href,
-  title,
-  className = "",
-  toggle,
-}) => {
-  const router = useRouter();
-  const [currentPath, setCurrentPath] = useState<string>("");
-
-  const handleClick = () => {
-    toggle();
-    router.push(href);
-    setCurrentPath(href);
+const Header = () => {
+  // Navbar toggle
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const navbarToggleHandler = () => {
+    setNavbarOpen(!navbarOpen);
   };
 
-  return (
-    <button
-      onClick={handleClick}
-      className={`${className} relative group`}
-    >
-      {title}
-      <span
-        className={`h-[1px] inline-block absolute left-0 -bottom-0.5 group-hover:w-full transform-[width] ease duration-300 ${
-          currentPath === href ? "w-full" : "w-0"
-        } dark:bg-white`}
-      >
-        &nbsp;
-      </span>
-    </button>
-  );
-};
+  // Sticky Navbar
+  const [sticky, setSticky] = useState(false);
+  const handleStickyNavbar = () => {
+    if (window.scrollY >= 80) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyNavbar);
+  });
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => setIsOpen(!isOpen);
-  const pathname = usePathname();
+  // submenu handler
+  const [openIndex, setOpenIndex] = useState(-1);
+  const handleSubmenu = (index: any) => {
+    if (openIndex === index) { 
+      setOpenIndex(-1);
+    } else {
+      setOpenIndex(index);
+    }
+  };
+
+  const usePathName = usePathname();
 
   return (
-    <header className="bg-black h-24 w-full text-[20px] px-36 py-12 font-medium flex items-center justify-between relative">
-      {/* Hamburger */}
-      <button
-        className="flex-col items-center justify-center md:hidden block -ml-20"
-        onClick={handleClick}
+    <>
+    <header
+  className={`header left-0 top-0 z-40 text-[17px] flex w-full items-center py-5 ${
+    sticky
+      ? "fixed z-[9999]  bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
+      : "bg-transparent"
+  }`}
+>
+
+        <div className="container">
+          <div className="relative -mx-4 flex items-center justify-between">
+            <div className="w-60 max-w-full px-4 xl:mr-12">
+              <Link
+                href="/"
+                className={`header-logo block w-full ${
+                  sticky ? "py-5 lg:py-2" : "py-8"
+                } `}
+              >
+               <Logo/>
+              </Link>
+            </div>
+            <div className="flex w-full items-center ml-[360px] justify-between px-4">
+              <div>
+              <button
+  onClick={navbarToggleHandler}
+  id="navbarToggler"
+  aria-label="Mobile Menu"
+  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 ml-20 lg:hidden !-white"
+>
+  <span
+    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300  ${
+      navbarOpen ? " top-[7px] rotate-45" : " "
+    } bg-white`} // Set background to white
+  />
+  <span
+    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300  ${
+      navbarOpen ? "opacity-0 " : " "
+    } bg-white`} // Set background to white
+  />
+  <span
+    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300  ${
+      navbarOpen ? " top-[-8px] -rotate-45" : " "
+    } bg-white`} // Set background to white
+  />
+</button>
+
+                <nav
+  id="navbarCollapse"
+  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-black px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-gray-900 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+    navbarOpen
+      ? "visibility top-full opacity-100"
+      : "invisible top-[120%] opacity-80"
+  }`}
+>
+
+                  <ul className="block lg:flex lg:space-x-12 !opacity-100">
+                  {menuData.map((menuItem, index) => (
+  <li key={index} className="group relative">
+    {menuItem.path ? (
+      <Link
+        href={menuItem.path}
+        className={`flex py-2 -base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+          usePathName === menuItem.path || (menuItem.path === "/" && usePathName === "/")
+            ? "-primary dark:-white opacity-100"  // Ensure full opacity when active
+            : "-dark hover:-blue-500 dark:-white/70 dark:hover:text-white opacity-70"  // Fade out inactive links
+        }`}
       >
-        <span
-          className={`bg-white transition-all duration-300 ease-out block h-0.5 w-7 rounded-sm ${
-            isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
-          }`}
-        ></span>
-        <span
-          className={`bg-white transition-all duration-300 ease-out block h-0.5 w-7 rounded-sm my-0.5 ${
-            isOpen ? "opacity-0" : "opacity-100"
-          }`}
-        ></span>
-        <span
-          className={`bg-white transition-all duration-300 ease-out block h-0.5 w-7 rounded-sm ${
-            isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
-          }`}
-        ></span>
-      </button>
-      {/* Main Navbar */}
-      <div className="w-full flex justify-between items-center hidden md:block lg:block">
-        <Logo />
-        <nav className="mx-6">
-          {["Home", "Skills", "Projects", "About", "Contact"].map((item) => (
-            <Link
-            key={item}
-            href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-            className={`${
-              pathname === (item === "Home" ? "/" : `/${item.toLowerCase()}`) ? "text-blue-500" : "text-white"
-            } font-bold text-xl mx-4`}
-          >
-              {item}
-            </Link>
-          ))}
-        </nav>
-      </div>
-      {/* Mobile */}
-      {isOpen && (
-        <motion.div
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="min-w-[70vw] flex flex-col justify-center items-center z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 rounded-lg backdrop-blur-md py-32"
+        {menuItem.title}
+      </Link>
+    ) : (
+      <>
+        <p
+          onClick={() => handleSubmenu(index)}
+          className="flex cursor-pointer items-center justify-between py-2 -base -dark group-hover:-primary dark:-white/70 dark:group-hover:-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
         >
-          <Logo />
-          <nav className="flex items-center flex-col justify-center">
-      {["Home", "Skills", "Projects", "About", "Contact"].map((item) => (
-        <MobileLink
-          key={item}
-          href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-          title={item}
-          className={`${
-            pathname === (item === "Home" ? "/" : `/${item.toLowerCase()}`) ? "text-blue-500" : "text-white"
-          } font-bold text-xl mx-4`}
-          toggle={handleClick}
-        />
+          {menuItem.title}
+          <span className="pl-3">
+            <svg width="25" height="24" viewBox="0 0 25 24">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M6.29289 8.8427C6.68342 8.45217 7.31658 8.45217 7.70711 8.8427L12 13.1356L16.2929 8.8427C16.6834 8.45217 17.3166 8.45217 17.7071 8.8427C18.0976 9.23322 18.0976 9.86639 17.7071 10.2569L12 15.964L6.29289 10.2569C5.90237 9.86639 5.90237 9.23322 6.29289 8.8427Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </p>
+        <div
+          className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100  lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
+            openIndex === index ? "block" : "hidden"
+          }`}
+        >
+          {menuItem.path && (
+            <Link
+              href={menuItem.path || "/"} // Add a fallback '/' or ''
+              className={`flex py-2 -base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                usePathName === menuItem.path || (menuItem.path === "/" && usePathName === "/")
+                  ? "-primary dark:-white"
+                  : "-dark hover:-primary dark:-white/70 dark:hover:-white"
+              }`}
+            >
+              {menuItem.title}
+            </Link>
+          )}
+        </div>
+      </>
+    )}
+  </li>
+))}
 
-            ))}
-          </nav>
-        </motion.div>
-      )}
-    </header>
+
+                  </ul>
+                </nav>
+              </div>
+              <div className="flex items-center justify-end pr-16 lg:pr-0">
+                <Link
+                  href="/signin"
+                  className="hidden px-7 py-3 -base font-medium -dark hover:opacity-70 dark:-white md:block"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/signup"
+                  className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+>
+                  Sign Up
+                </Link>
+                <div>
+                  {/* <ThemeToggler /> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
   );
 };
 
-export default Navbar;
+export default Header;

@@ -90,3 +90,21 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.line-animation {
+  animation: lineGlow 2s ease-in-out infinite;
+}
+
+@keyframes lineGlow {
+  0% {
+    stroke-opacity: 0.3;
+    stroke-width: 0.5;
+  }
+  50% {
+    stroke-opacity: 1;
+    stroke-width: 1;
+  }
+  100% {
+    stroke-opacity: 0.3;
+    stroke-width: 0.5;
+  }
+}

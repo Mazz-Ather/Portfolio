@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#4e4d4c] text-black w-full px-4 py-8 md:px-8 lg:px-16 xl:px-24 2xl:px-64">
+        <footer className="bg-[#1f1f1f] text-black w-full px-4 py-8 md:px-8 lg:px-16 xl:px-24 2xl:px-64">
             <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24">
                 {/* LEFT */}
                 <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-7">
@@ -30,7 +30,7 @@ export default function Footer() {
                         <div key={section} className="flex flex-col gap-7">
                             <h2 className="text-white/80 text-xl hover:text-red-500 transition-all duration-300">{section}</h2>
                             <div className="flex flex-col gap-4">
-                                {['About us', 'Gallery', 'Terms of use', 'Carrer', 'Contact'].map((item) => (
+                                {['About us', 'Terms of use', 'Carrer', 'Contact'].map((item) => (
                                     <Link key={item} href={'/'} className="text-white/80 text-lg hover:text-red-500 transition-all duration-300">
                                         {item}
                                     </Link>
