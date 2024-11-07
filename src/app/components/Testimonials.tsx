@@ -104,28 +104,28 @@ const Testimonials = () => {
 
   return (
     <section className="bg-black xl:mt-32">
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-screen px-11 py-2 sm:px-6 lg:px-1 lg:py-6">
         <h2 className="text-center text-4xl font-bold tracking-tight hover:underline hover:underline-offset-8 text-gray-100 sm:text-5xl">
           Read trusted reviews from our customers
         </h2>
 
-        <div className="mt-8">
-          <div ref={keenSliderRef} className="keen-slider overflow-hidden">
+        <div className="mt-8 ">
+          <div ref={keenSliderRef} className="keen-slider overflow-hidden ">
             {reviews.map((review, i) => (
-              <div key={i} className="keen-slider__slide opacity-40 transition-opacity duration-500">
-                <blockquote className="rounded-lg bg-gray-900 p-6 shadow-sm sm:p-8">
-                  <div className="flex items-center gap-4">
+              <div key={i} className="keen-slider__slide opacity-40 transition-opacity duration-800 ">
+                <blockquote className="rounded-lg bg-gray-900 px-11 py-9 shadow-sm sm:p-8 ">
+                  <div className="flex items-center gap-4 ">
                     <Image
                       alt={review.name}
                       src={review.image}
                       width={50}
-  height={50}
+  height={30}
   layout="5rem"
   quality={100}
     className="rounded-full object-cover"
                     />
                     <div>
-                      <div className="flex justify-center gap-0.5 text-green-500">
+                      <div className="flex justify-center w-[170vw] gap-0.5 text-green-500">
                         {/* SVG star icons here */}
                       </div>
                       <p className="mt-0.5 text-lg font-medium text-gray-100">{review.name}</p>
