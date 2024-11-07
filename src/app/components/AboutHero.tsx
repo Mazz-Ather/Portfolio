@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import React, { useRef } from 'react';
-import { Github, Link } from 'lucide-react';
 import { TimelineContent } from '@/components/ui/framer-timeline';
 import GitHubButton from './GithubButton';
 
