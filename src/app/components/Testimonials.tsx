@@ -59,22 +59,17 @@ const Testimonials = () => {
 
     return () => clearTimeout(timeoutId)
   }, [])
-
   const reviews = [
-    {
-      name: 'Paul Starr',
-      image: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1180&q=80',
-      text: 'I highly recommend working with Mazz Ather! He is incredibly dedicated and delivered a website that exceeded my expectations.',
-    },
+    
     {
       name: 'Sara Lee',
       image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1180&q=80',
-      text: 'Mazz Ather is not only skilled but also very kind and supportive. He made the entire process seamless. I couldn’t be happier!',
+      text: 'Mazz Ather is not only skilled but also very kind and supportive. He made the entire process seamless. I could not be happier!',
     },
     {
       name: 'John Doe',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1180&q=80',
-      text: 'I was blown away by Mazz Ather’s work ethic and attention to detail. If you need a website done right, he’s your guy!',
+      text: 'I was blown away by Mazz Ather s work ethic and attention to detail. If you need a website done right, he is your guy!',
     },
     {
       name: 'Emily Tran',
@@ -85,8 +80,15 @@ const Testimonials = () => {
       name: 'Carlos Ruiz',
       image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1180&q=80',
       text: 'Mazz Ather is phenomenal! He is patient, detail-oriented, and truly goes above and beyond for his clients.',
+    },{
+      name: 'Paul Starr',
+      image: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1180&q=80',
+      text: 'I highly recommend working with Mazz Ather! He is incredibly dedicated and delivered a website that exceeded my expectations.',
     },
+    // New reviews
+    
   ]
+  
 
   const goToPrevious = () => {
     if (sliderInstance) {
@@ -101,7 +103,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="bg-black">
+    <section className="bg-black xl:mt-32">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <h2 className="text-center text-4xl font-bold tracking-tight hover:underline hover:underline-offset-8 text-gray-100 sm:text-5xl">
           Read trusted reviews from our customers
@@ -116,9 +118,11 @@ const Testimonials = () => {
                     <Image
                       alt={review.name}
                       src={review.image}
-                      height={20}
-                      width={20}
-                      className="size-14 rounded-full object-cover"
+                      width={50}
+  height={50}
+  layout="5rem"
+  quality={100}
+    className="rounded-full object-cover"
                     />
                     <div>
                       <div className="flex justify-center gap-0.5 text-green-500">
@@ -133,7 +137,7 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <div className="flex justify-center gap-4 mt-3  text-white font-semibold -z-10">
+          <div className="flex justify-center gap-4 mt-3 xl:z-10 text-white font-semibold -z-10">
             <button 
               onClick={goToPrevious} 
               id="keen-slider-previous" 

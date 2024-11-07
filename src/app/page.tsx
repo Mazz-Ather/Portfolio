@@ -7,6 +7,14 @@ import Navbar from "./components/Navbar";
 import PricingPlans from "./components/PricingPlans";
 // import Skills from "./skills/page";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home Page",
+  description: "This is Home Page",
+  // other metadata
+};
+
 const page = ()=>
 {
   return(

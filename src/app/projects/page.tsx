@@ -7,7 +7,7 @@ import project2 from "/public/product.jpg";
 import project3 from "/public/movie3.jpg";
 import project4 from "/public/iphone.jpg";
 import project5 from "/public/cuberto.jpg";
-
+import AnimateText from "../components/AnimatedText";
 const Projects = () => {
   return (
     <>
@@ -15,7 +15,12 @@ const Projects = () => {
         <Navbar />
       </div>
       <section className="bg-gray-900 text-gray-100 contrast-125">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 ">
+        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 md:mt-52 sm:mt-60 xs:mt-60 lg:mt-0">
+      <AnimateText
+            text="See , My Latest Projects"
+
+            className="xxs:m-3 z-10 mx-auto !contrast-125 xs:text-5xl xs:font-semibold  xs:m-3  lg:!text-7xl   sm:!text-5xl md:text-6xl  lg:ml-16  md:ml-11 xs:w-full  sm:ml-20  xl:text-8xl   xl:font-bold  xl:-ml-8 xl:m-5 "
+          />
           <Link
             rel=""
             href="#"

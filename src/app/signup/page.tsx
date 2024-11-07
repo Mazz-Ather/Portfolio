@@ -4,16 +4,19 @@ import { Metadata } from "next";
 
 import Navbar from "../components/Navbar";
 export const metadata: Metadata = {
-  title: "Sign Up Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign Up Page for Startup Nextjs Template",
+  title: "Sign Up Page ",
+  description: "This is Sign Up Page",
   // other metadata
 };
 
 const SignupPage = () => {
   return (
     <>
+    <div className="!text-white">
     <Navbar/>
-      <section className="relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
+
+    </div>
+      <section className="flex items-center justify-center mx-auto relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">

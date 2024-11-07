@@ -1,19 +1,22 @@
 import Link from "next/link";
-
-import { Metadata } from "next";
 import Navbar from "../components/Navbar";
 
+import { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "Sign In Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign In Page for Startup Nextjs Template",
+  title: "Sign In Page ",
+  description: "This is Sign In Page",
   // other metadata
 };
 
 const SigninPage = () => {
   return (
     <>
+    <div className="!text-white">
+
     <Navbar/>
-      <section className="relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
+    </div>
+      <section className="flex items-center justify-center mx-auto relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">

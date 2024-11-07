@@ -42,7 +42,7 @@ const handleSubmenu = (index: number) => {  // Change type of index to number
   return (
     <>
     <header
-  className={`header left-0 top-0 z-40 text-[17px] flex w-full items-center py-5 ${
+  className={`header left-0 top-0 z-40 text-[17px] flex w-full items-center py-5   ${
     sticky
       ? "fixed z-[9999]  bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
       : "bg-transparent"
@@ -153,17 +153,18 @@ const handleSubmenu = (index: number) => {  // Change type of index to number
 
                   </ul>
                 </nav>
-              </div>
-              <div className="flex items-center justify-end pr-16 lg:pr-0">
+              </div >
+              <div className="flex relative items-center justify-end lg:pr-0 ">
                 <Link
                   href="/signin"
-                  className="hidden px-7 py-3 -base font-medium -dark hover:opacity-70 dark:-white md:block"
+                  className="hidden px-7 py-3 md:px-5  md:-ml-9 lg:mr-6 xl:mr-1  -base font-medium -dark hover:opacity-70 dark:-white md:hiddden xl:block"
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
+                  className="ease-in-up  shadow-btn hover:shadow-btn-hover lg:-mr-36  xl:mr-2
+                  hidden rounded-sm bg-primary px-8 py-3 font-medium text-white transition duration-300 hover:bg-opacity-90 md:hiddden xl:block md:px-9 lg:px-6 xl:px-9"
 >
                   Sign Up
                 </Link>

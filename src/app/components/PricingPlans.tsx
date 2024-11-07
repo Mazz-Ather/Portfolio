@@ -2,10 +2,10 @@ import React from "react";
 
 const PricingPlans: React.FC = () => {
   return (
-    <section className="bg-gray-900 py-12">
+    <section className="bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="text-4xl font-extrabold text-yellow-500 contrast-150 sm:text-5xl">
             Pricing Plans
           </h2>
           <p className="mt-4 text-xl text-gray-400">
@@ -21,7 +21,7 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Start building with Next.js today. Ideal for personal projects and learning.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-white">$29</span>
+              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">$29</span>
               <span className="text-xl font-medium text-gray-400">/mo</span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
@@ -116,7 +116,7 @@ const PricingPlans: React.FC = () => {
             </ul>
             <a
               href="#"
-              className="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-gradient-to-r from-yellow-200 to-yellow-600 hover:contrast-200"
             >
              Get Started
             </a>
@@ -129,7 +129,7 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Perfect for startups or small businesses looking to scale with Next.js.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-white">$149</span>
+              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">$149</span>
               <span className="text-xl font-medium text-gray-400">/mo</span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
@@ -290,7 +290,7 @@ const PricingPlans: React.FC = () => {
             </ul>
             <a
               href="#"
-              className="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-gradient-to-r from-yellow-200 to-yellow-600 hover:contrast-200 "
             >
               Get Started
             </a>
@@ -303,7 +303,7 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Perfect for growing teams and enterprises building with Next.js at scale.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-white">$249</span>
+              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">$249</span>
               <span className="text-xl font-medium text-gray-400">/mo</span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
@@ -464,7 +464,7 @@ const PricingPlans: React.FC = () => {
             </ul>
             <a
               href="#"
-              className="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-gradient-to-r from-yellow-200 to-yellow-600 hover:contrast-200"
             >
               Get Started
             </a>

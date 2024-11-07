@@ -218,7 +218,7 @@ export const Vortex = (props: VortexProps) => {
   return (
     <div
       className={cn(
-        "sm:hidden lg:block lg:w-1/3 absolute p-20 xl:w-full",
+        "xs:hidden lg:block lg:w-1/3 absolute p-20 xl:w-full",
         props.containerClassName
       )}
     >
