@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { Metadata } from "next";
-
 import Navbar from "../components/Navbar";
+
 export const metadata: Metadata = {
   title: "Sign Up Page ",
   description: "This is Sign Up Page",
@@ -16,7 +16,7 @@ const SignupPage = () => {
     <Navbar/>
 
     </div>
-      <section className="flex items-center justify-center mx-auto relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
+      <section className="flex items-center justify-center mt-24 mx-auto relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
@@ -163,15 +163,15 @@ const SignupPage = () => {
                       </div>
                       <span>
                         By creating account means you agree to the
-                        <a href="#0" className="text-primary hover:underline">
+                        <Link href="#0" className="text-primary hover:underline">
                           {" "}
                           Terms and Conditions{" "}
-                        </a>
+                        </Link>
                         , and our
-                        <a href="#0" className="text-primary hover:underline">
+                        <Link href="#0" className="text-primary hover:underline">
                           {" "}
                           Privacy Policy{" "}
-                        </a>
+                        </Link>
                       </span>
                     </label>
                   </div>

@@ -20,8 +20,8 @@ const Skill = ({ name, x, y }: { name: string; x: string; y: string }) => {
 const Skills = () => {
   return (
     <>
-      <div className="!bg-gray-100  text-black">
-        <Navbar />
+      <div className="bg-black mt-28  text-black">
+        <Navbar/>
       </div>
       <h2 className="!bg-white font-bold text-8xl -mb-4 w-full flex items-center justify-center text-black ">
         Skills
@@ -45,6 +45,8 @@ const Skills = () => {
           <Skill name='Word press' x='-25vw' y='-1vw'/>
           <Skill name='web designing' x='11vw' y='-7vw'/>
           <Skill name='SEO' x='-15vw' y='17vw'/>
+          <Skill name='sanity' x='-6vw' y='11vw'/>
+          <Skill name='prompt engineering' x='-13vw' y='-12vw'/>
         </div>
       </div>
     </>

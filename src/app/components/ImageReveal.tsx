@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useSpring } from 'framer-motion';
+import { motion, useSpring, useTransform, useMotionValue } from 'framer-motion';
 import React, { useState, MouseEvent, useRef } from 'react';
 
 interface ImageItem {
@@ -20,36 +20,43 @@ function ImageReveal() {
 
   const list: ImageItem[] = [
     {
-        img: '/html1.jpg', // HTML CSS Development
-        label: 'HTML CSS Development',
-      },
-      {
-        img: 'download.jpeg', // React.js Development
-        label: 'React.js Development',
-      },
-      {
-        img: 'next1.jpg', // Next.js Development
-        label: 'Next.js Development',
-      },
-      {
-        img: 'wordpress.jpg', // WordPress Development
-        label: 'WordPress Development',
-      },
-      {
-        img: 'webdesign1.jpg', //web Development
-        label: 'Web Designing',
-      },
+      img: '/html1.jpg',
+      label: 'HTML CSS Development',
+    },
+    {
+      img: 'download.jpeg',
+      label: 'React.js Development',
+    },
+    {
+      img: 'next1.jpg',
+      label: 'Next.js Development',
+    },
+    {
+      img: 'wordpress.jpg',
+      label: 'WordPress Development',
+    },
+    
   ];
 
+  // Enhanced spring configuration for smoother movement
   const spring = {
-    stiffness: 150,
-    damping: 15,
-    mass: 0.1,
+    stiffness: 100,
+    damping: 30,
+    mass: 0.5,
+    restSpeed: 0.001
   };
+
+  // Add rotation for subtle hover effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const rotateX = useTransform(mouseY, [-100, 100], [5, -5]);
+  const rotateY = useTransform(mouseX, [-100, 100], [-5, 5]);
 
   const imagePos = {
     x: useSpring(0, spring),
     y: useSpring(0, spring),
+    scale: useSpring(1, spring)
   };
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -60,12 +67,19 @@ function ImageReveal() {
     const relativeX = clientX - containerRect.left;
     const relativeY = clientY - containerRect.top;
 
+    mouseX.set(relativeX - containerRect.width / 2);
+    mouseY.set(relativeY - containerRect.height / 2);
+
     imagePos.x.set(relativeX - imageRef.current.offsetWidth / 2);
     imagePos.y.set(relativeY - imageRef.current.offsetHeight / 2);
+    imagePos.scale.set(1.05);
   };
 
   const handleImageInteraction = (item: ImageItem, opacity: number) => {
     setImg({ src: item.img, alt: item.label, opacity });
+    if (opacity === 0) {
+      imagePos.scale.set(1);
+    }
   };
 
   return (
@@ -74,7 +88,7 @@ function ImageReveal() {
       onMouseMove={handleMove}
       className="bg-black relative w-full mx-auto py-16 p-4 gap-9"
     >
-       <h2 className="text-6xl font-semibold text-[#3d70f2] text-center mb-8">
+      <h2 className="text-6xl font-semibold text-[#3d70f2] text-center mb-8">
         Services I Offered
       </h2>
 
@@ -87,7 +101,6 @@ function ImageReveal() {
           className="w-full py-5 cursor-pointer text-center flex justify-between text-white border-b border-white last:border-none"
         >
           <p className="text-5xl">{item.label}</p>
-          <span>Portfolio</span>
         </div>
       ))}
 
@@ -95,12 +108,18 @@ function ImageReveal() {
         ref={imageRef}
         src={img.src}
         alt={img.alt}
-        className="w-[300px] h-[220px] rounded-lg object-cover absolute top-0 left-0 transition-opacity duration-200 ease-in-out pointer-events-none"
+        className="w-[300px] h-[220px] rounded-lg object-cover absolute top-0 left-0 pointer-events-none"
         style={{
           x: imagePos.x,
           y: imagePos.y,
+          scale: imagePos.scale,
+          rotateX: rotateX,
+          rotateY: rotateY,
           opacity: img.opacity,
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: img.opacity }}
+        transition={{ duration: 0.3 }}
       />
     </section>
   );

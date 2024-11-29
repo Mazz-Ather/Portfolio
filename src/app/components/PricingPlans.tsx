@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import React from "react";
 
 const PricingPlans: React.FC = () => {
@@ -21,8 +22,8 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Start building with Next.js today. Ideal for personal projects and learning.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">$29</span>
-              <span className="text-xl font-medium text-gray-400">/mo</span>
+              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">Free</span>
+              <span className="text-xl font-medium text-gray-400"></span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
               <li className="flex items-center">
@@ -40,25 +41,9 @@ const PricingPlans: React.FC = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>2 Pages</span>
+                <span>1 Page</span>
               </li>
-              <li className="flex items-center">
-                <svg
-                  className="h-6 w-6 text-green-500 mr-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Design customization</span>
-              </li>
+              
               <li className="flex items-center">
                 <svg
                   className="h-6 w-6 text-green-500 mr-2"
@@ -114,12 +99,13 @@ const PricingPlans: React.FC = () => {
               </li>
             
             </ul>
-            <a
+           
+            <Link
               href="#"
               className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-gradient-to-r from-yellow-200 to-yellow-600 hover:contrast-200"
             >
              Get Started
-            </a>
+            </Link>
           </div>
 
           {/* Starter Plan */}
@@ -288,12 +274,12 @@ const PricingPlans: React.FC = () => {
                 <span>Social media icons</span>
               </li>
             </ul>
-            <a
+            <Link
               href="#"
               className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-gradient-to-r from-yellow-200 to-yellow-600 hover:contrast-200 "
             >
               Get Started
-            </a>
+            </Link>
           </div>
 
           {/* Pro Plan */}
@@ -462,12 +448,12 @@ const PricingPlans: React.FC = () => {
                 <span>Opt-in form</span>
               </li>
             </ul>
-            <a
+            <Link
               href="#"
               className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-gradient-to-r from-yellow-200 to-yellow-600 hover:contrast-200"
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
       </div>

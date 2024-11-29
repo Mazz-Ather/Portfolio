@@ -1,8 +1,7 @@
 
   import Index from "../components/Index"
-import Navbar from "../components/Navbar"
-
 import { Metadata } from "next";
+import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "Contact Page",
@@ -22,3 +21,4 @@ const contactPage =()=>{
 }
 
 export default contactPage
+

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Star } from 'lucide-react';
 import { Colors, Liquid } from '@/components/ui/liquid-gradient';
+import Link from 'next/link';
 
 // type ColorKey =
 //   | 'color1'
@@ -48,7 +49,7 @@ const GithubButton = ({ link, platform }: { link: string; platform: string }) =>
 
   return (
     <div className="flex justify-center mt-5">
-      <a
+      <Link
         href={link}
         target="_blank"
         rel="noopener noreferrer"
@@ -86,7 +87,7 @@ const GithubButton = ({ link, platform }: { link: string; platform: string }) =>
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         ></button>
-      </a>
+      </Link>
     </div>
   );
 };

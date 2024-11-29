@@ -8,7 +8,9 @@ body {
   padding: 0;
  background: #000;
 }
-
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

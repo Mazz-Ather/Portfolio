@@ -11,7 +11,7 @@ export default function Slide1(){
     return (
         <>
         <div>
-            <div className="flex flex-col  md:flex-row h-min w-full xxs:h-auto 2xl:mt-28 bg-[#091b2a] md:bg-black lg:bg-black xl:bg-black">
+            <div className="flex flex-col  md:flex-row h-min  w-full xxs:h-auto 2xl:mt-28 bg-[#091b2a] md:bg-black lg:bg-black xl:bg-black">
                 <div className="h-[60%] flex flex-col justify-center items-center flex-1">
                 
                     <AnimateText
@@ -61,7 +61,7 @@ export default function Slide1(){
                         playsInline
                         />
                 </div>
-                <Vortex/>
+                <Vortex className="absolute inset-0 z-0" />
 
             </div>
         </div>

@@ -11,11 +11,11 @@ import AnimateText from "../components/AnimatedText";
 const Projects = () => {
   return (
     <>
-      <div className="!bg-gray-900 contrast-125 !text-white">
+      <div className="!bg-gray-900 relative top-0 z-[999] contrast-125 !text-white">
         <Navbar />
       </div>
-      <section className="bg-gray-900 text-gray-100 contrast-125">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 md:mt-52 sm:mt-60 xs:mt-60 lg:mt-0">
+      <section className="text-gray-100 py-16 contrast-125">
+        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 mt-9 lg:mt-0">
       <AnimateText
             text="See , My Latest Projects"
 
