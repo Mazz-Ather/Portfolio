@@ -21,7 +21,7 @@ export default function Slide1(){
           />
            <p className="xxs:text-[19px] xxs:m-3 xxs:font-semibold md:w-[85%] xs:text-[20px] xs:m-3 xs:font-semibold text-white/80  sm:text-[22px] text-lg mt-9 xs:w-47 text-center md:text-[18px] md:ml-11  lg:text-[21px] lg:font-medium lg:text-center lg:w-[80%] lg:ml-20 xl:-ml-6 "> My passion for coding is fueled by a desire to create <br />meaningful and impactful digital solutions, constantly pushing <br /> the boundaries of innovation and user experience!</p>
              <Link
-              href="./resume.pdf"
+              href="/mycv.pdf"
               target="_blank"
               className=""
               download={true}
