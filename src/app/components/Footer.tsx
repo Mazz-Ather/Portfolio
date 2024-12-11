@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#151515] text-black w-full px-4 py-8 md:px-8 lg:px-16 xl:px-24 2xl:px-64">
-            <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24">
+        <footer className="bg-[#151515] z-[999] text-black w-full px-4 py-8 md:px-8 lg:px-16 xl:px-24 2xl:px-64">
+            <div className="flex flex-col z-[999] md:flex-row justify-between gap-12 md:gap-24">
                 {/* LEFT */}
                 <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-7">
                     <Link href={'/'} className="text-2xl text-yellow-600 font-serif contrast-200">

@@ -110,7 +110,7 @@ const Testimonials = () => {
       text: 'From start to finish, Mazz Ather demonstrated exceptional skill and commitment. A true professional!',
     }
     
-    // ... other reviews
+   
   ]
 
   const goToPrevious = () => {

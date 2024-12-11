@@ -1,5 +1,5 @@
 import Hero from "@/app/components/Hero";
-import Testimonials  from "./components/Testimonials";
+import Testimonials from "./components/Testimonials";
 // import { ScrollBasedVelocityDemo } from "./components/velocity";
 import ImageReveal from "./components/ImageReveal";
 // import { Vortex } from "./components/Vortex";
@@ -13,30 +13,21 @@ import Navbar from "./components/Navbar";
 export const metadata: Metadata = {
   title: "Maaz Portfolio",
   description: "This is Home Page",
-  // other metadata
 };
 
-const page = ()=>
-{
-  return(
+const page = () => {
+  return (
     <>
-    <div className="!bg-black text-white">
+      <div className="md:!bg-black text-white ">
+        <Navbar />
+      </div>
+      <div className="pt-28"><Hero/></div>
 
-    <Navbar/>
-    </div>
-<div className="pt-28">
+      <Testimonials/>
 
-<Hero/>
-</div>
-
-{/* <Skills/> */}
-<Testimonials/>
-
-{/* <ScrollBasedVelocityDemo/> */}
-
-<ImageReveal/>
-<PricingPlans/>
+      <ImageReveal/>
+      <PricingPlans/>
     </>
-  )
-}
+  );
+};
 export default page;

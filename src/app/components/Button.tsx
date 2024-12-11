@@ -1,9 +1,9 @@
 const ButtonHover11 = () => {
     return (
       <>
-        <button className='md:ml-20 lg:ml-11 xl:-ml-6 group relative flex h-12 -ml-9 z-10 w-[190px]  items-center justify-between border-2 dark:border-[#656fe2] border-[#394481] rounded-full  bg-gradient-to-r dark:from-[#070e41] dark:to-[#263381] from-[#f7f8ff] to-[#ffffff] font-medium dark:text-neutral-200 text-black'>
-          <span className='pl-4'>Resume</span>
-          <div className='relative h-9 w-9 overflow-hidden  dark:bg-white bg-black rounded-full mr-1'>
+        <button className='md:ml-20 lg:ml-11 xl:-ml-6 group relative flex h-12 -ml-9 z-10 w-[190px]  items-center justify-between border-2 dark:border-[#656fe2] border-[#394481] rounded-2xl  bg-gradient-to-r dark:from-[#070e41] dark:to-[#263381] from-[#f7f8ff] to-[#ffffff] font-medium dark:text-neutral-200 text-black'>
+          <span className='pl-4 font-semibold '>Resume</span>
+          <div className='relative h-9 w-9 overflow-hidden  dark:bg-white bg-blue-500 rounded-full mr-1'>
             <div className='absolute top-[0.7em] left-[-0.1em] grid place-content-center transition-all w-full h-full duration-200 group-hover:-translate-y-5 group-hover:translate-x-4 '>
               <svg
                 width='15'

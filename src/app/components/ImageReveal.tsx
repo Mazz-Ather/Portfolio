@@ -32,10 +32,12 @@ function ImageReveal() {
       label: 'Next.js Development',
     },
     {
-      img: 'wordpress.jpg',
-      label: 'WordPress Development',
+      img: 'sanity2.jpg',
+      label: 'Sanity.io Development',
+    },{
+      img: 'ecommerce.webp',
+      label: 'Ecommerce Web Development',
     },
-    
   ];
 
   // Enhanced spring configuration for smoother movement
@@ -43,20 +45,20 @@ function ImageReveal() {
     stiffness: 100,
     damping: 30,
     mass: 0.5,
-    restSpeed: 0.001
+    restSpeed: 0.001,
   };
 
   // Add rotation for subtle hover effect
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   const rotateX = useTransform(mouseY, [-100, 100], [5, -5]);
   const rotateY = useTransform(mouseX, [-100, 100], [-5, 5]);
 
   const imagePos = {
     x: useSpring(0, spring),
     y: useSpring(0, spring),
-    scale: useSpring(1, spring)
+    scale: useSpring(1, spring),
   };
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -86,7 +88,7 @@ function ImageReveal() {
     <section
       ref={containerRef}
       onMouseMove={handleMove}
-      className="bg-black relative w-full mx-auto py-16 p-4 gap-9"
+      className="bg-black relative w-full mx-auto py-16 p-4 gap-9 overflow-hidden"
     >
       <h2 className="text-6xl font-semibold text-[#3d70f2] text-center mb-8">
         Services I Offered
