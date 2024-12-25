@@ -139,10 +139,10 @@ const Features = () => (
   <div  onClick={() => window.open("https://ecommerce-hackathon-mu.vercel.app", "_blank")} className="cursor-pointer h-full w-full">
    
     <BentoCard
-      src="videos/1212.mp4"
+      src="videos/1n1.mp4"
       title={
         <>
-          <b className="text-5xl text-black/90 ">Ecommerce Furniture Website </b>
+          <b className="text-5xl text-white/90 ">Ecommerce Furniture Website </b>
         </>
       }
       description="I built this dynamic website using Next.js, featuring Add to Cart functionality, image zoom, and an AI-powered chatbot for user interaction. The site includes hover effects, a detailed blog section, and fully dynamic pages, combining modern design with advanced features for an exceptional user experience"
@@ -158,7 +158,7 @@ const Features = () => (
    
           <BentoCard
           
-          src="videos/exclusive.mp4"
+          src="videos/1exclusive.mp4"
           title={
             <>
                 <b className="text-5xl text-white/90">Exclusive Ecommerce Website</b>
@@ -174,7 +174,7 @@ const Features = () => (
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
         <div  onClick={() => window.open("https://bicycle-ecommerce-nu.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
           <BentoCard
-            src="videos/cycle.mp4"
+            src="videos/1cycle.mp4"
             title={
               <>
                 <b className="text-5xl text-white/90">Bicyle Ecommerce Website</b>
@@ -207,7 +207,7 @@ const Features = () => (
 
 
         <BentoCard
-            src="videos/o1.mp4"
+            src="videos/1ol.mp4"
             title={
               <>
                 <b className="text-5xl text-white/90">Anime Scrolling Animation</b>
@@ -221,7 +221,7 @@ const Features = () => (
 
        <BentoTilt className="bento-tilt_2">
        <BentoCard
-            src="videos/thomas.mp4"
+            src="videos/1thomas.mp4"
             title={
               <>
                 <b className="text-5xl text-white/90">Animated Personal Portfolio</b>
