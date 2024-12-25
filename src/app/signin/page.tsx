@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Metadata } from "next";
-import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "Sign In Page ",
@@ -12,10 +11,6 @@ export const metadata: Metadata = {
 const SigninPage = () => {
   return (
     <>
-    <div className="!text-white">
-
-    <Navbar/>
-    </div>
       <section className="flex mt-24 items-center justify-center mx-auto relative z-10 overflow-hidden pb-16 pt-6 md:pb-20 lg:pb-28 lg:pt-[10px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">

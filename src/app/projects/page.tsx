@@ -1,20 +1,13 @@
 "use client";
-import Image from "next/image";
-import Navbar from "../components/Navbar";
-import Link from "next/link";
-import project1 from "/public/significo.jpg";
-import project2 from "/public/product.jpg";
-import project3 from "/public/movie3.jpg";
-import project4 from "/public/iphone.jpg";
-import project5 from "/public/cuberto.jpg";
-import AnimateText from "../components/AnimatedText";
+import Feature from "../components/Feature";
 const Projects = () => {
   return (
-    <>
-      <div className="!bg-gray-900 relative top-0 z-[999] contrast-125 !text-white">
-        <Navbar />
-      </div>
-      <section className="text-gray-100 py-16 contrast-125">
+    <>  
+     <div className="-z-[9999] ">
+
+      <Feature/>
+     </div>
+      {/* <section className="text-gray-100 py-16 contrast-125">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 mt-9 lg:mt-0">
       <AnimateText
             text="See , My Latest Projects"
@@ -147,7 +140,7 @@ const Projects = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

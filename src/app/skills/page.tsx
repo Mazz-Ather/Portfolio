@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
 
 const Skill = ({ name, x, y }: { name: string; x: string; y: string }) => {
   return (
@@ -20,13 +19,11 @@ const Skill = ({ name, x, y }: { name: string; x: string; y: string }) => {
 const Skills = () => {
   return (
     <>
-      <div className="bg-black mt-28  text-black">
-        <Navbar/>
-      </div>
-      <h2 className="!bg-white font-bold text-8xl -mb-4 w-full flex items-center justify-center text-black ">
+     
+      <h2 className="!bg-white pt-11 font-bold text-8xl mt-16 -mb-4 w-full flex items-center justify-center text-black ">
         Skills
       </h2>
-      <div className="!bg-white">
+      <div className="!bg-white z-0 ">
         <div className=" w-full h-[85vh] relative flex items-center justify-center rounded-full bg-circularLight -mb-1">
           {/* Additional content */}
           <motion.div
@@ -47,6 +44,7 @@ const Skills = () => {
           <Skill name='SEO' x='-15vw' y='17vw'/>
           <Skill name='sanity' x='-6vw' y='11vw'/>
           <Skill name='prompt engineering' x='-13vw' y='-12vw'/>
+          <Skill name='Ai Chatbot' x='-32vw' y='-10vw'/>
         </div>
       </div>
     </>

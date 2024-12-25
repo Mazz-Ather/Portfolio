@@ -1,144 +1,222 @@
-// components/Navbar.tsx
-"use client";
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { FaArrowRight } from 'react-icons/fa';
-import Logo from './Logo';
+// 'use client'
+// import React, { useEffect, useRef, useState } from "react";
+// import gsap from "gsap";
+// import "./navbar.css";
+// import { useGSAP } from "@gsap/react";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
+//   const menuRef = useRef<HTMLDivElement>(null);
+//   const linksRef = useRef<HTMLDivElement>(null);
+// //   const socialLinksRef = useRef(null);
+//   const menuToggleRef = useRef<HTMLDivElement>(null);
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+//   // Split text into spans for animation (this part remains the same)
+//   useEffect(() => {
+//     const splitTextIntoSpans = (selector:any) => {
+//       const elements = document.querySelectorAll(selector);
+//       elements.forEach((element) => {
+//         let text = element.innerText;
+//         let splitText = text
+//           .split("")
+//           .map((char:any) => `<span>${char === " " ? "&nbsp;&nbsp;" : char}</span>`)
+//           .join("");
+//         element.innerHTML = splitText;
+//       });
+//     };
 
-  const navLinks = [
-    { title: 'Home', href: '/'},
-    { title: 'About', href: '/about' },
-    { title: 'Skills', href: '/skills' },
-    { title: 'Projects', href: '/projects' },
-    { title: 'Contact', href: '/contact' },
-    
-  ];
+//     splitTextIntoSpans(".header h1");
+//   }, []);
 
-  return (
-    <nav className="w-full fixed p-5 left-0 z-[999] pt-5 text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Left side - Logo */}
-          <div className="flex-shrink-0 ">
-            <Logo/>
-          </div>
+//   // Handle the menu toggle animation
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 ">
-            {/* Nav Links */}
-            <div className="flex space-x-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className={`group relative ${
-                    pathname === link.href ? 'text-blue-500' : 'text-white'
-                  } hover:text-blue-400 transition-colors duration-300`}
-                >
-                  <span className="flex items-center">
-                    {link.title}
-                    <FaArrowRight className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              ))}
-            </div>
+//   useGSAP(() => {
+//     if (!menuRef.current || !linksRef.current)
+//       return;
 
-            {/* Auth Buttons */}
-            <div className="flex items-center space-x-6">
-              <button className="px-4 py-2 text-white border border-white hover:bg-white hover:text-black rounded-md transition-colors duration-300">
-              <Link href={'/signin'}>
-                    Sign In
-                    </Link>
-              </button>
-              <button className="px-4 py-2 bg-white text-black hover:bg-gray-200 rounded-md transition-colors duration-300">
-              <Link href={'/signup'}>
-                    Sign Up
-                    </Link>
-              </button>
-            </div>
-          </div>
+//     if (isMenuOpen) {
+//       // Open menu animations
+//       gsap.to(menuRef.current, {
+//         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//         ease: "power3.out", // Using power3 easing
+//         duration: 1.5,
+//         onStart: () => {
+//           if (menuRef.current) {
+//             menuRef.current.style.pointerEvents = "all";
+//           }
+//         },
+//       });
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 hover:rounded-lg hover:bg-gray-900  transition-all duration-300 focus:outline-offset-1"
-            >
-              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
+//       gsap.to(linksRef.current, {
+//         y: 0,
+//         opacity: 1,
+//         stagger: 0.5,
+//         delay: 0.85,
+//         duration: 1,
+//         ease: "power3.out",
+//       });
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            ref={menuRef}
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed  top-24 right-0 w-[50%] h-[calc(100vh-4rem)] bg-black shadow-xl md:hidden"
-          >
-            <div className="p-6">
-              {/* <h2 className="text-2xl font-bold mb-6 text-white">About Me</h2> */}
-              <div className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.title}
-                    href={link.href}
-                    className={`group text-2xl ${
-                      pathname === link.href ? 'text-blue-500' : 'text-white'
-                    } hover:text-blue-400 transition-all duration-300`}
-                  >
-                    <div className="flex items-center p-2 rounded-md group-hover:bg-gray-800 transition-all duration-300">
-                      <span>{link.title}</span>
-                      <FaArrowRight className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <span className="block w-0 group-hover:w-full h-0.5 bg-blue-400 transition-all duration-300"></span>
-                  </Link>
-                ))}
-                <div className="pt-4 space-y-4">
-                  <button className="w-full py-3 text-white border border-white hover:bg-white hover:text-black rounded-md transition-all duration-300">
-                  <Link href={'/signin'}>
-                    Sign In
-                    </Link>
-                  </button>
-                  <button className="w-full py-3 bg-white text-black hover:bg-gray-200 rounded-md transition-all duration-300">
-                    <Link href={'/signup'}>
-                    Sign Up
-                    </Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
-  );
-};
+//       // Ensure the social links animate as well
+//       gsap.to(".socials .sub-col p", {
+//         y: 0,
+//         opacity: 1,
+//         stagger: 0.1,
+//         delay: 0.85, // Delay to sync with menu opening
+//         duration: 1,
+//         ease: "power3.out",
+//       });
 
-export default Navbar;
+//       gsap.to(".video-wrapper", {
+//         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//         ease: "power3.out", // Using power3 easing
+//         duration: 1.5,
+//         delay: 0.5,
+//       });
+
+//       gsap.to(".header h1 span", {
+//         rotateY: 0,
+//         stagger: 0.05,
+//         delay: 0.75,
+//         duration: 1,
+//         ease: "power4.out",
+//       });
+
+//       gsap.to(".header h1 span", {
+//         y: 0,
+//         scale: 1,
+//         stagger: 0.05,
+//         duration: 1.5,
+//         ease: "power4.out",
+//       });
+//     } else {
+//       // Close menu animations
+//       gsap.to(menuRef.current, {
+//         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+//         ease: "power3.out", // Using power3 easing
+//         duration: 1.5,
+//         onComplete: () => {
+//           if (menuRef.current) {
+//             menuRef.current.style.pointerEvents = "none";
+//             gsap.set(menuRef.current, {
+//               clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+//             });
+//           }
+
+//           if (linksRef.current) {
+//             gsap.set(linksRef.current, { y: 30, opacity: 0 });
+//           }
+
+//         //   if (socialLinksRef.current) {
+//         //     gsap.set(socialLinksRef.current, { y: 30, opacity: 0 });
+//         //   }
+
+//           gsap.set(".video-wrapper", {
+//             clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+//           });
+
+//           gsap.set(".header h1 span", {
+//             y: 500,
+//             rotateY: 90,
+//             scale: 0.75,
+//           });
+//         },
+//       });
+//     }
+//   }, [isMenuOpen]);
+
+//   // Toggle menu visibility
+//   const handleMenuToggle = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//     if (menuToggleRef.current) {
+//       if (isMenuOpen) {
+//         menuToggleRef.current.classList.remove("opened");
+//         menuToggleRef.current.classList.add("closed");
+//       } else {
+//         menuToggleRef.current.classList.remove("closed");
+//         menuToggleRef.current.classList.add("opened");
+//       }
+//     }
+//   };
+
+//   return (
+//     <div className="z-[9999] !bg-black">
+//       <div className="logo">
+//         <a href="#">Avaro</a>
+//       </div>
+
+//       <div
+//         className="menu-toggle closed"
+//         ref={menuToggleRef}
+//         onClick={handleMenuToggle}
+//       >
+//         <div className="menu-toggle-icon">
+//           <div className="hamburger">
+//             <div className="menu-bar" data-position="top"></div>
+//             <div className="menu-bar" data-position="bottom"></div>
+//           </div>
+//         </div>
+//         <div className="menu-copy">
+//           <p>Menu</p>
+//         </div>
+//       </div>
+
+//       <div className="menu bg-black" ref={menuRef}>
+//         <div className="col col-1">
+//           <div className="menu-logo">
+//             <a href="#">Avaro</a>
+//           </div>
+
+//           <div className="links" ref={linksRef}>
+//             <div className="link">
+//               <a href="#">projects</a>
+//             </div>
+//             <div className="link">
+//               <a href="#">expertise</a>
+//             </div>
+//             <div className="link">
+//               <a href="#">agency</a>
+//             </div>
+//             <div className="link">
+//               <a href="#">contact</a>
+//             </div>
+//           </div>
+
+//           <div className="video-wrapper">
+//             <video autoPlay muted loop src="3.mp4"></video>
+//           </div>
+//         </div>
+
+//         <div className="col col-2" >
+//           <div className="socials" >
+//             <div className="sub-col" >
+//               <p>avaro</p>
+//               <p>Lorem ipsum dolor sit amet.</p>
+//               <p>Lorem, ipsum.</p>
+//               <p>Lorem.</p>
+//               <br />
+//               <p>lorem@gmail.com</p>
+//               <p>ipsum@gmail.com</p>
+//               {/* <p>avaro</p> */}
+//               {/* <p>Lorem ipsum dolor sit amet.</p> */}
+//             </div>
+//             <div className="sub-col" >
+//               <p>Lorem, ipsum.</p>
+//               <p>Lorem</p>
+//               <br />
+//               <p>lorem@gmail.com</p>
+//               <p>ipsum@gmail.com</p>
+//             </div>
+//           </div>
+//           <div className="header">
+//             <h1>
+//               <span>avaro</span>
+//             </h1>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;

@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+*{ 
+   font-family: 'Josefin Sans', sans-serif;
+   
+  /* overflow: hidden; */
+}
+
 body {
-  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   margin: 0;
   padding: 0;
- background: #000;
+ background: #0a0a0a;
+ color:white ;
 }
 .scroll-smooth {
   scroll-behavior: smooth;
@@ -109,4 +119,80 @@ body {
     stroke-opacity: 0.3;
     stroke-width: 0.5;
   }
+}
+
+/* Change the text selection color */
+::selection {
+  background-color: #ff5e69; /* Your desired background color */
+  color: #ffffff; /* Your desired text color */
+}
+
+/* For better cross-browser compatibility */
+::-moz-selection {
+  background-color: #ff5e69; /* Same as above for Firefox */
+  color: #ffffff;
+}
+
+/* scroll bar */
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0734d7;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+/* footer links */
+
+
+.links,
+.call {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.sharedStyles:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.1em;
+  opacity: 0;
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+.call:after {
+  background-image: linear-gradient(
+    108deg,
+    #b16cea 14%,
+    #ff5e69 57%,
+    #ff8a56 81%,
+    #ffa84b
+  );
+  width: 800px;
+}
+
+.links:after {
+  width: 250px;
+  background-color: #0734d7;
+}
+
+.links::after,
+.call::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.links:hover::after,
+.call:hover::after {
+  transform: translate3d(0, 0, 0);
 }

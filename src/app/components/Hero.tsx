@@ -1,70 +1,96 @@
-// 'use client'
+"use client";
+import React from "react";
+import { HeroParallax } from "@/components/ui/hero-parallax";
 
-import Image from "next/image"
-import suitPic from "/public/my-pic.png";
-import AnimateText from "../components/AnimatedText";
-import Link from "next/link";
-import { Vortex } from "./Vortex";
-import ButtonHover11 from "../components/Button";
-
-export default function Slide1(){
-    return (
-        <>
-        <div>
-            <div className="flex flex-col  md:flex-row h-min  w-full xxs:h-auto 2xl:mt-28 bg-[#091b2a] md:bg-black lg:bg-black xl:bg-black">
-                <div className="h-[60%] z-[999] flex flex-col justify-center items-center flex-1">
-                
-                    <AnimateText
-            text="Hello , I'm Mazz Ather"
-
-            className="xxs:m-3 z-10  xs:text-5xl xs:font-semibold  xs:m-3 xs:w-47 xl:w-[50vw] lg:!text-7xl  lg:mt-44 sm:!text-5xl md:text-6xl lg:w-[60vw] lg:px-5 md:w-[85%]  lg:ml-16 md:mt-24 md:ml-11 sm:w-[75%] sm:mt-20 sm:ml-20  xs:mt-20 xl:text-8xl   xl:font-bold xl:mt-36 xl:-ml-8 xl:m-5 "
-          />
-           <p className="xxs:text-[19px] xxs:m-3 xxs:font-semibold md:w-[85%] xs:text-[20px] xs:m-3 xs:font-semibold text-white/80  sm:text-[22px] text-lg mt-9 xs:w-47 text-center md:text-[18px] md:ml-11  lg:text-[21px] lg:font-medium lg:text-center lg:w-[80%] lg:ml-20 xl:-ml-6 "> My passion for coding is fueled by a desire to create <br />meaningful and impactful digital solutions, constantly pushing <br /> the boundaries of innovation and user experience!</p>
-             <Link
-              href="/mycv.pdf"
-              target="_blank"
-              className=""
-              download={true}
-            >
-            <ButtonHover11/>
-            </Link>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:gap-5 ">
-                <div className="relative group z-[99]">
-  <Image
-    src={suitPic}
-    alt="suit"
-    width={500}
-    height={340}
-    className="object-contain  sm:w-[490px] sm:h-[460px] xs:ml-2 sm:ml-14   z-[999] xl:h-[600px] xl:w-[500px] xl:-mt-9 xl:-ml-9 xl:opacity-100 "
-  />
-    </div>
-  {/* <video
-    src="/myvideo2.mp4"
-    width={550}
-    height={540}
-    className="hidden md:hidden lg:block z-10  lg:z-10  lg:-ml-2 lg:h-[545px] lg:w-[600px] lg:mt-5 sm:hidden sm:w-[720px] sm:ml-20 sm:h-[450px] xl:mt-5 xl:h-[500px] xl:w-[500px] xl:opacity-0 "
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
-
-                    <video 
-                        src="myvideo2.mp4"  
-                        width={550} 
-                        height={540} 
-                         className="hidden md:block z-10 lg:z-10  md:w-[590px] md:h-[535px] md:-ml-2  lg:hidden md:mt-16"
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
-                        /> */}
-                </div>
-                <Vortex className="absolute -z-[999]" />
-
-            </div>
-        </div>
-        </>
-    )
+export function Hero() {
+  return <HeroParallax products={products} />;
 }
+export const products = [
+  {
+    title: "Mazz",
+    link: "/gomoonbeam.com",
+    thumbnail:
+      "/images/img3.jpg",
+  },
+  {
+    title: "Nextjs Developer",
+    link: "/cursor.so",
+    thumbnail:
+      "/images/img10.jpg",
+  },
+  {
+    title: "React Developer",
+    link: "/userogue.com",
+    thumbnail:
+      "/images/img5.png",
+  },
+
+  {
+    title: "Html Developer",
+    link: "/editorially.org",
+    thumbnail:
+      "/images/img6.jpg",
+  },
+  {
+    title: "Tailwind css Developer",
+    link: "/editrix.ai",
+    thumbnail:
+      "/images/img15.jpg",
+  },
+  {
+    title: "Ecommerce Developer",
+    link: "/app.pixelperfect.quest",
+    thumbnail:
+      "/myimg5.jpg",
+  },
+
+  {
+    title: "Sanity Developer",
+    link: "/algochurn.com",
+    thumbnail:
+      "/myimg4.jpg",
+  },
+  {
+    title: "web Developer",
+    link: "/ui.aceternity.com",
+    thumbnail:
+      "/images/img1.png",
+  },
+  {
+    title: "frontend Developer",
+    link: "/smartbridgetech.com",
+    thumbnail:
+      "/myimg5.jpg",
+  },
+  {
+    title: "Developer",
+    link: "/renderwork.studio",
+    thumbnail:
+      "/myimg2.jpg",
+  },
+
+  {
+    title: "Creme Digital",
+    link: "/cremedigital.com",
+    thumbnail:
+      "/myimg5.jpg",
+  },
+  // {
+  //   title: "Golden Bells Academy",
+  //   link: "/goldenbellsacademy.com",
+  //   thumbnail:
+  //     "/myimg5.jpg",
+  // },
+  // {
+  //   title: "Invoker Labs",
+  //   link: "/invoker.lol",
+  //   thumbnail:
+  //     "/myimg5.jpg",
+  // },
+  // {
+  //   title: "E Free Invoice",
+  //   link: "/efreeinvoice.com",
+  //   thumbnail:
+  //     "/myimg5.jpg",
+  // },
+];

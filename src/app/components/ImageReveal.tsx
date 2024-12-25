@@ -88,9 +88,9 @@ function ImageReveal() {
     <section
       ref={containerRef}
       onMouseMove={handleMove}
-      className="bg-black relative w-full mx-auto py-16 p-4 gap-9 overflow-hidden"
+      className="relative w-full mx-auto py-16 p-4 gap-9 overflow-hidden"
     >
-      <h2 className="text-6xl font-semibold text-[#3d70f2] text-center mb-8">
+      <h2 className="text-6xl font-semibold text-[#0734d7] text-center mb-8">
         Services I Offered
       </h2>
 
@@ -100,9 +100,9 @@ function ImageReveal() {
           onMouseEnter={() => handleImageInteraction(item, 1)}
           onMouseMove={() => handleImageInteraction(item, 1)}
           onMouseLeave={() => handleImageInteraction(item, 0)}
-          className="w-full py-5 cursor-pointer text-center flex justify-between text-white border-b border-white last:border-none"
+          className="w-full py-5 cursor-pointer text-center flex justify-between text-white border-b border-white last:border-none hover:text-[#0734d7]"
         >
-          <p className="text-5xl">{item.label}</p>
+          <p className="text-5xl ">{item.label}</p>
         </div>
       ))}
 

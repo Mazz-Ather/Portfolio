@@ -97,6 +97,7 @@ const config: Config = {
   		xl: '1400px'
   	}
   },
+  
   plugins: [require("tailwindcss-animate")],
 };
 export default config;

@@ -2,7 +2,7 @@ import NewsLatterBox from "@/app/components/NewsLetterBox";
 
 const ContactP = () => {
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-r from-[#121723] to-[#141a2a]">
+    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-r from-[#121723] to-[#141a2a] -m-6">
       <div className="container mx-auto ">
         <div className="-mx-4 flex flex-wrap ">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">

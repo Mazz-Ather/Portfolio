@@ -1,7 +1,6 @@
 
   import Index from "../components/Index"
 import { Metadata } from "next";
-import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "Contact Page",
@@ -11,10 +10,6 @@ export const metadata: Metadata = {
 
 const contactPage =()=>{
   return<>
-  <div className="!bg-gradient-to-r from-[#121723] to-[#141a2a] !text-white">
-
-  <Navbar/>
-  </div>
   <Index/>
   {/* <NewsLatterBox/> */}
   </>

@@ -6,7 +6,7 @@ const PricingPlans: React.FC = () => {
     <section className="bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-yellow-500 contrast-150 sm:text-5xl">
+          <h2 className="text-4xl font-extrabold text-[#0734d7] contrast-150 sm:text-5xl">
             Pricing Plans
           </h2>
           <p className="mt-4 text-xl text-gray-400">
@@ -22,7 +22,7 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Start building with Next.js today. Ideal for personal projects and learning.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">Free</span>
+              <span className="text-5xl font-extrabold text-[#0734d7] contrast-200">Free</span>
               <span className="text-xl font-medium text-gray-400"></span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
@@ -115,7 +115,7 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Perfect for startups or small businesses looking to scale with Next.js.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">$149</span>
+              <span className="text-5xl font-extrabold text-[#0734d7] contrast-200">$149</span>
               <span className="text-xl font-medium text-gray-400">/mo</span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
@@ -289,7 +289,7 @@ const PricingPlans: React.FC = () => {
               <p className="mt-4 text-gray-400">Perfect for growing teams and enterprises building with Next.js at scale.</p>
             </div>
             <div className="mb-8">
-              <span className="text-5xl font-extrabold text-yellow-600 contrast-200">$249</span>
+              <span className="text-5xl font-extrabold text-[#0734d7] contrast-200">$249</span>
               <span className="text-xl font-medium text-gray-400">/mo</span>
             </div>
             <ul className="mb-8 space-y-4 text-gray-400">
