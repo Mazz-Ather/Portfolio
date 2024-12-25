@@ -122,73 +122,69 @@ export const BentoCard = ({ src, title, description, isComingSoon }: { src: stri
 };
 
 const Features = () => (
-  <section className="bg-black pb-52">
-    <div className="container mx-auto px-3 md:px-10">
+<section className="bg-black pb-2">
+  <div className="container mx-auto px-3 md:px-10">
     <div className="px-5 py-32">
-  <p className="font-circular-web text-2xl text-blue-50">
-    Elevate Your Digital Projects with a Next.js Expert
-  </p>
-  <p className="max-w-5xl font-circular-web text-lg text-white opacity-50">
-                opacity: hoverOpacity,
-    As a passionate and skilled developer, I specialize in creating high-performance websites using Next.js, React, and other modern web technologies. With experience in building dynamic, SEO-friendly, and responsive web applications, I deliver solutions tailored to meet your specific needs. Whether it is crafting engaging user interfaces, optimizing for speed and scalability, or implementing complex features, my goal is to ensure your online presence stands out. I am dedicated to pushing the boundaries of web development and helping you achieve your vision with innovative, seamless solutions. Let&apos;s collaborate and bring your ideas to life with cutting-edge technology and exceptional user experiences.
-  </p>
-</div>
+      <p className="font-circular-web text-2xl text-blue-50">
+        Elevate Your Digital Projects with a Next.js Expert
+      </p>
+      <p className="max-w-5xl font-circular-web text-lg text-white opacity-50">
+        As a passionate and skilled developer, I specialize in creating high-performance websites using Next.js, React, and other modern web technologies. With experience in building dynamic, SEO-friendly, and responsive web applications, I deliver solutions tailored to meet your specific needs. Whether it is crafting engaging user interfaces, optimizing for speed and scalability, or implementing complex features, my goal is to ensure your online presence stands out. I am dedicated to pushing the boundaries of web development and helping you achieve your vision with innovative, seamless solutions. Let&apos;s collaborate and bring your ideas to life with cutting-edge technology and exceptional user experiences.
+      </p>
+    </div>
 
-   
-<BentoTilt className="border-2 relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
-  <div  onClick={() => window.open("https://ecommerce-hackathon-mu.vercel.app", "_blank")} className="cursor-pointer h-full w-full">
-   
-    <BentoCard
-      src="videos/1n1.mp4"
-      title={
-        <>
-          <b className="text-5xl text-white/90 ">Ecommerce Furniture Website </b>
-        </>
-      }
-      description="I built this dynamic website using Next.js, featuring Add to Cart functionality, image zoom, and an AI-powered chatbot for user interaction. The site includes hover effects, a detailed blog section, and fully dynamic pages, combining modern design with advanced features for an exceptional user experience"
-      isComingSoon
-    />
-  </div>
-</BentoTilt>
-
-      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-
-        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
-        <div  onClick={() => window.open("https://exclusive-ecommerce-bice.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
-   
-          <BentoCard
-          
-          src="videos/1exclusive.mp4"
+    <BentoTilt className="border-2 relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+      <div onClick={() => window.open("https://ecommerce-hackathon-mu.vercel.app", "_blank")} className="cursor-pointer h-full w-full">
+        <BentoCard
+          src="videos/1n1.mp4"
           title={
             <>
+              <b className="text-5xl text-white/90">Ecommerce Furniture Website </b>
+            </>
+          }
+          description="I built this dynamic website using Next.js, featuring Add to Cart functionality, image zoom, and an AI-powered chatbot for user interaction. The site includes hover effects, a detailed blog section, and fully dynamic pages, combining modern design with advanced features for an exceptional user experience."
+          isComingSoon
+        />
+      </div>
+    </BentoTilt>
+
+    {/* Card Grid */}
+    <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+      {/* Card 1 */}
+      <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+        <div onClick={() => window.open("https://exclusive-ecommerce-bice.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
+          <BentoCard
+            src="videos/1exclusive.mp4"
+            title={
+              <>
                 <b className="text-5xl text-white/90">Exclusive Ecommerce Website</b>
               </>
             }
-            description="I built this dynamic website using Next.js, combining modern design with advanced features for an exceptional user experienc"
+            description="I built this dynamic website using Next.js, combining modern design with advanced features for an exceptional user experience."
             isComingSoon
-            />
-            </div>
-   
-        </BentoTilt>
+          />
+        </div>
+      </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-        <div  onClick={() => window.open("https://bicycle-ecommerce-nu.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
+      {/* Card 2 */}
+      <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+        <div onClick={() => window.open("https://bicycle-ecommerce-nu.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
           <BentoCard
             src="videos/1cycle.mp4"
             title={
               <>
-                <b className="text-5xl text-white/90">Bicyle Ecommerce Website</b>
+                <b className="text-5xl text-white/90">Bicycle Ecommerce Website</b>
               </>
             }
-            description="bycyle Ecommerce website by using html css."
+            description="Bicycle Ecommerce website using HTML and CSS."
             isComingSoon
-            />
-            </div>
-        </BentoTilt>
+          />
+        </div>
+      </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-        <div  onClick={() => window.open("https://resume-builder-two-kappa.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
-
+      {/* Card 3 */}
+      <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+        <div onClick={() => window.open("https://resume-builder-two-kappa.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
           <BentoCard
             src="videos/m4.mp4"
             title={
@@ -196,89 +192,48 @@ const Features = () => (
                 <b className="text-5xl text-white/90">Resume Builder</b>
               </>
             }
-            description="Resume builder by using html , css , js  ."
+            description="Resume builder using HTML, CSS, and JS."
             isComingSoon
-            />
-            </div>
-        </BentoTilt>
-        {/*  */}
-        <BentoTilt className="bento-tilt_2">
-        <div  onClick={() => window.open("https://one-piece-scrolling.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
+          />
+        </div>
+      </BentoTilt>
 
-
-        <BentoCard
+      {/* Card 4 */}
+      <BentoTilt className="bento-tilt_2">
+        <div onClick={() => window.open("https://one-piece-scrolling.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
+          <BentoCard
             src="videos/1ol.mp4"
             title={
               <>
                 <b className="text-5xl text-white/90">Anime Scrolling Animation</b>
               </>
             }
-            description="One Piece Anime Web Scrolling Effect ."
-            isComingSoon
-            />
-            </div>
-        </BentoTilt>
-
-       <BentoTilt className="bento-tilt_2">
-       <BentoCard
-            src="videos/1thomas.mp4"
-            title={
-              <>
-                <b className="text-5xl text-white/90">Animated Personal Portfolio</b>
-              </>
-            }
-            description="My Own Personal Portfolio Website By using html ,css ,js  ."
-            // isComingSoon
-          />
-        
-        </BentoTilt>
-      </div>
-      {/* exact */}
-      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7 mt-8">
-{/* 
-        <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-          <BentoCard
-            src="videos/about1.mp4"
-            title={
-              <>
-                <b>stationary design</b>
-              </>
-            }
-            description="A adas ksdhsa sadhsd sdiusdhs dshd kjes."
+            description="One Piece Anime Web Scrolling Effect."
             isComingSoon
           />
-        </BentoTilt>
-            <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
-              <BentoCard
-                src="videos/video.mp4"
-                title={
-                  <>
-                    <b>mobile app development</b>
-                  </>
-                }
-                description="Seo Optimization lorem sjds dshds sdkhs j."
-                isComingSoon
-              />
-            </BentoTilt> */}
+        </div>
+      </BentoTilt>
 
-        {/* <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-          <BentoCard
-            src="videos/hro-2.mp4"
-            title={
-              <>
-                <b>2d animation</b>
-              </>
-            }
-            description="A cross-world web design thay sdhs fdsfusdf sdfsdkjf ."
-            isComingSoon
-          />
-        </BentoTilt> */}
-
-        <BentoTilt className="bento-tilt_2">
-        <div  onClick={() => window.open("https://clone-website-significo.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
-
-
+      {/* Card 5 */}
+      <BentoTilt className="bento-tilt_2">
         <BentoCard
+          src="videos/1thomas.mp4"
+          title={
+            <>
+              <b className="text-5xl text-white/90">Animated Personal Portfolio</b>
+            </>
+          }
+          description="My Personal Portfolio Website using HTML, CSS, and JS."
+        />
+      </BentoTilt>
+    </div>
+
+    {/* Second Grid */}
+    <div className="grid h-[700px] w-full grid-cols-2 grid-rows-2 gap-7 mt-8 -mb-80">
+      {/* Card 6 */}
+      <BentoTilt className="bento-tilt_2">
+        <div onClick={() => window.open("https://clone-website-significo.vercel.app/", "_blank")} className="cursor-pointer h-full w-full">
+          <BentoCard
             src="videos/h1.mp4"
             title={
               <>
@@ -287,22 +242,23 @@ const Features = () => (
             }
             description="Mini Clone of Significo Website."
             isComingSoon
-            />
-            </div>
-        </BentoTilt>
+          />
+        </div>
+      </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2">
-          <div className="flex size-full flex-col justify-between bg-[#0734d7] p-5">
-            <h1 className="bento-title special-font  text-white text-5xl">
-              M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
-            </h1>
-
-            <TiLocationArrow className="m-5 scale-[5] self-end" />
-          </div>
-        </BentoTilt>
-      </div>
+      {/* Card 7 */}
+      <BentoTilt className="bento-tilt_2">
+        <div className="flex size-full flex-col justify-between bg-[#0734d7] p-5">
+          <h1 className="bento-title special-font text-white text-5xl">
+            M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
+          </h1>
+          <TiLocationArrow className="m-5 scale-[5] self-end" />
+        </div>
+      </BentoTilt>
     </div>
-  </section>
+  </div>
+</section>
+
 );
 
 export default Features;
