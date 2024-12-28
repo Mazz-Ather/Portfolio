@@ -29,7 +29,7 @@ export default function ContactDetails() {
 
     {
       name: "Resume",
-      path: "/mycv.pdf",
+      path: "/mycv1.pdf",
     },
 
     {
