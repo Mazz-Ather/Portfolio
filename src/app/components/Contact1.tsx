@@ -29,7 +29,7 @@ export default function ContactDetails() {
 
     {
       name: "Resume",
-      path: "/mycv1.pdf",
+      path: "/mycv2.pdf",
     },
 
     {
@@ -39,7 +39,7 @@ export default function ContactDetails() {
 
     {
       name: "Linkedin",
-      path: "https://www.linkedin.com/in/mazz-ather-a8252b291/",
+      path: "https://www.linkedin.com/in/mazz-ather",
     },
 
     {
@@ -68,10 +68,9 @@ export default function ContactDetails() {
 
       <div className="flex flex-col xl:flex-row xl:justify-between">
         <div>
-          <h2 className="font-medium italic text-white sm:text-base md:text-[24px] lg:font-bold">
-            {" < Mazz"}
-            <GradientTxt tagName="span" txt="Ather />." />
-          </h2>
+         <Link href={'/'} className="text-secondary font-[rejoice-body] mb-2 lg:text-[1.6vw] md:text-[2vw] capitalize">
+            Mazz Ather
+              </Link>
           <p className="py-2 text-[#8a95ad]">Karaci, Pakistan</p>
           <div className="flex items-center gap-2">
             <svg

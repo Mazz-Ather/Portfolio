@@ -1,148 +1,180 @@
-"use client";
-import Feature from "../components/Feature";
-const Projects = () => {
+"use client"
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ProjectCard } from "@/app/components/Projects/ProjectCard"
+import { FilterButtons } from "@/app/components/Projects/FilterButton"
+import { ProjectStats } from "@/app/components/Projects/ProjectStats"
+import { Testimonial } from "@/app/components/Projects/Testimonials"
+
+// Define the Project type
+type Project = {
+  id: number
+  title: string
+  description: string
+  imageUrl: string
+  projectUrl: string
+  githubUrl?: string
+  category?: string
+  size?: "small" | "medium" | "large"
+  featured?: boolean
+  awards?: string[]
+}
+
+// Sample project data
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "E-commerce Furniture",
+    description:
+      "I developed an e-commerce platform for a furniture hackathon that uses Redux for state management, dynamic Sanity integration for content, and smooth hover effects for an engaging user experience.",
+    imageUrl: "/images/p13.png",
+    projectUrl: "https://ecommerce-hackathon-mu.vercel.app/",
+    // githubUrl: "https://github.com/example/ecommerce",
+    category: "Ecommerce",
+    size: "large",
+    featured: true,
+    // awards: ["Best UI/UX Design 2023"],
+  },
+  {
+    id: 2,
+    title: "Ochi Awwwards Clone",
+    description:
+      "I developed an Awwwards clone inspired by ochi.design to showcase my skills in modern web development and UI/UX design. The project features interactive animations, smooth transitions, and a responsive layout that mirrors the clean, award-winning aesthetics of the original site. This clone allowed me to experiment with advanced techniques, resulting in a visually engaging and high-performance website.",
+    imageUrl: "/images/p2.png",
+    projectUrl: "https://ochi-awards.vercel.app/",
+    // githubUrl: "https://github.com/example/taskmanager",
+    category: "Awwwards",
+    featured: true,
+    size: "medium",
+    awards: ["Top Productivity App 2022"],
+  },
+  {
+    id: 3,
+    title: "Ecommerce Landing ",
+    description:
+      "An interactive Single page ecommerce wesbite.",
+    imageUrl: "/images/p15.png",
+    projectUrl: "https://exclusive-ecommerce-bice.vercel.app/",
+    // githubUrl: "https://github.com/example/weather",
+    category: "Ecommerce",
+    size: "small",
+  },
+  {
+    id: 4,
+    title: "Dev Landing Page",
+    description: "Single page awwwards clone.",
+    imageUrl: "/images/p18.png",
+    projectUrl: "https://dev-landing-awwards.vercel.app/",
+    // githubUrl: "https://github.com/example/aichatbot",
+    category: "Awwwards",
+    size: "large",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "Ecommerce Bicyle",
+    description: "Mini one page ecomerce bicycle landing page",
+    imageUrl: "/images/p5.png",
+    projectUrl: "https://bicycle-ecommerce-nu.vercel.app/",
+    // githubUrl: "https://github.com/example/cryptodash",
+    category: "Ecommerce",
+    size: "medium",
+  },
+  {
+    id: 6,
+    title: "Rejoice Awwwards Clone",
+    description:
+      "I developed **Rejoice**, a meticulously crafted clone of an Awwwards-winning website, designed to replicate its stunning aesthetics, smooth interactions, and high-performance experience.",
+    imageUrl: "/images/p16.png",
+    projectUrl: "https://rejoice-awwwards.vercel.app/",
+    // githubUrl: "https://github.com/example/argallery",
+    category: "Awwwards",
+    size: "small",
+    featured: true,
+    awards: ["Most Innovative App 2023"],
+  }, {
+    // ?
+    id: 7,
+    title: "Awwwards Zentry Clone",
+    description:
+      "I developed a clone of Zentry that replicates its modern design and interactive functionality. This project features responsive layouts, smooth animations, and a dynamic user interface, showcasing my skills in modern web technologies and design replication.",
+    imageUrl: "/images/p6.png",
+   
+    projectUrl: "https://get-social-agency.vercel.app/",
+    // githubUrl: "https://github.com/example/argallery",
+    category: "Awwwards",
+    size: "small",
+    awards: ["Most Innovative App 2023"],
+  },{
+    id: 8,
+    title: "Signifo Awwwards Clone",
+    description:
+      "made awwards clone of Significo website.", 
+    imageUrl: "/images/p21.png",
+    projectUrl: "https://significo-eosin.vercel.app/",
+    // githubUrl: "https://github.com/example/argallery",
+    category: "Awwwards",
+    size: "medium",
+    awards: ["Most Innovative App 2023"],
+  },
+]
+
+export default function Projects() {
+  const [filter, setFilter] = useState("All")
+  const categories = ["All", ...Array.from(new Set(projects.map((project) => project.category)))]
+
+  const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
+
   return (
-    <>  
-     <div className="-z-[9999] ">
+    <div className="min-h-screen bg-gradient-to-br py-11  from-black via-gray-900 to-black text-white">
+      <header className="py-20 px-4 sm:px-6 lg:px-8 text-center">
+        <motion.h1
+          className="text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-800"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          My Projects
+        </motion.h1>
+        <motion.p
+          className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          Explore a collection of innovative solutions and cutting-edge technologies.
+        </motion.p>
+      </header>
 
-      <Feature/>
-     </div>
-      {/* <section className="text-gray-100 py-16 contrast-125">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 mt-9 lg:mt-0">
-      <AnimateText
-            text="See , My Latest Projects"
+      <ProjectStats projects={projects} />
 
-            className="xxs:m-3 z-10 mx-auto !contrast-125 xs:text-5xl xs:font-semibold  xs:m-3  lg:!text-7xl   sm:!text-5xl md:text-6xl  lg:ml-16  md:ml-11 xs:w-full  sm:ml-20  xl:text-8xl   xl:font-bold  xl:-ml-8 xl:m-5 "
-          />
-          <Link
-            rel=""
-            href="#"
-            className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-800 border-4 border-blue-500 contrast-200 p-1"
-          >
-            <Image
-              src={project3}
-              alt=""
-              className="object-cover contrast-50 w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
-            />
-            <div className="p-6 space-y-2 lg:col-span-5">
-              <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline hover:underline-offset-8 mt-16">
-                Movie Website
-              </h3>
-              <span className="text-sm dark:text-gray-600 capitalize">
-                February 19, 2021
-              </span>
-              <p className="capitalize">
-                I made this website by using HTML, CSS, and JavaScript, and
-                this website is fully responsive and it is a fully functional
-                website.
-              </p>
-            </div>
-          </Link>
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Link
-              rel="https://clone-website-significo.vercel.app/"
-              href="https://clone-website-significo.vercel.app/"
-              className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-800 border-4 border-blue-500 contrast-200"
-            >
-              <Image
-                src={project1}
-                alt="project2"
-                className="object-cover contrast-50 w-full rounded h-44 dark:bg-gray-500"
-              />
-              <div className="p-6 space-y-2">
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                  Signifo&apos;s Website
-                </h3>
-                <span className="text-xs dark:text-gray-600 capitalize">
-                  January 21, 2024
-                </span>
-                <p>
-                  This is a website made by me using HTML, CSS, and JavaScript,
-                  this website is made for Signifo&apos;s company, I made this
-                  website for them to showcase their products.
-                </p>
-              </div>
-            </Link>
-            <Link
-              rel="https://clone-website-significo-qzfo.vercel.app/"
-              href="https://clone-website-significo-qzfo.vercel.app/"
-              className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-800 border-4 border-blue-500 contrast-200"
-            >
-              <Image
-                src={project2}
-                alt="project3"
-                className="object-cover w-full contrast-50 rounded h-44 dark:bg-gray-500"
-              />
-              <div className="p-6 space-y-2">
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                  Product Designer Website
-                </h3>
-                <span className="text-xs dark:text-gray-600 capitalize">
-                  March 22, 2024
-                </span>
-                <p>
-                  This is a website made by me using HTML, CSS, and JavaScript.
-                </p>
-              </div>
-            </Link>
-            
-            <Link
-              rel=""
-              href="#"
-              className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-800 border-4 border-blue-500 contrast-200"
-            >
-              <Image
-                src={project4}
-                alt="project4"
-                className="object-cover contrast-50 w-full rounded h-44 dark:bg-gray-500"
-              />
-              <div className="p-6 space-y-2">
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                  Apple Website Clone
-                </h3>
-                <span className="text-xs dark:text-gray-600">
-                  April 23, 2021
-                </span>
-                <p>
-                  This is a website made by me using HTML, CSS, and JavaScript,
-                  fully responsive and fully functional website.
-                </p>
-              </div>
-            </Link>
-            <Link
-              rel=""
-              href="#"
-              className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-800 border-4 border-blue-500 contrast-200 hidden sm:block"
-            >
-              <Image
-                src={project5}
-                alt="project5"
-                className="object-cover contrast-50 w-full rounded h-44 dark:bg-gray-500"
-              />
-              <div className="p-6 space-y-2">
-                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                  Cuberto&apos;s Clone
-                </h3>
-                <span className="text-xs dark:text-gray-600">
-                  January 24, 2021
-                </span>
-                <p>
-                  This is a website made by me using HTML, CSS, and JavaScript,
-                  fully responsive and fully functional website.
-                </p>
-              </div>
-            </Link>
-            <button
-              type="button"
-              className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-50 dark:text-gray-600"
-            >
-              More posts coming soon...
-            </button>
-          </div>
+      <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <FilterButtons categories={categories} activeFilter={filter} setFilter={setFilter} />
+
+        <div className="grid grid-cols-12 gap-6 mt-12">
+          <AnimatePresence>
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className={`
+                  ${index % 5 === 0 ? "col-span-8" : "col-span-4"}
+                  ${index % 5 === 4 ? "col-span-12" : ""}
+                `}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
-      </section> */}
-    </>
-  );
-};
+      </section>
 
-export default Projects;
+      <Testimonial />
+    </div>
+  )
+}
+

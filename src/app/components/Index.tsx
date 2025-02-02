@@ -4,14 +4,14 @@ const ContactP = () => {
   return (
     <section
     id="contact"
-    className="overflow-hidden py-16 md:py-20 lg:py-44  -mt-11  bg-gradient-to-r from-[#121723] to-[#141a2a]   "
+    className="overflow-hidden py-16 md:py-20 lg:py-44  -mt-11 bg-gradient-to-br   from-black via-gray-900 to-black "
   >
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-wrap">
         {/* Contact Form Section */}
         <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
           <div
-            className="mb-12 rounded-lg bg-gradient-to-r from-[#364d85] to-[#02154e] text-white px-6 py-8 sm:p-12 lg:mb-5 xl:p-12 shadow-lg"
+            className="mb-12 rounded-lg bg-gradient-to-r from-[#1a2646] to-[#02154e] text-white px-6 py-8 sm:p-12 lg:mb-5 xl:p-12 shadow-lg"
             data-wow-delay=".15s"
           >
             <h2 className="mb-4 text-3xl font-semibold sm:text-4xl lg:text-3xl xl:text-4xl">

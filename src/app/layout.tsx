@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "./components/Footer";
-import Navbar1 from "@/app/components/Navbar1";
+import Navbar from "@/app/components/Home/Navbar/Navbar";
+import Cursor from "./components/cursor/Cursor";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -9,7 +10,8 @@ export default function RootLayout({
   return ( 
     <html lang="en">
       <body className="">
-        <Navbar1/>
+        <Cursor/>
+        <Navbar/>
         {/* <Icons/> */}
         
                 {children}

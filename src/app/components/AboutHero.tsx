@@ -8,9 +8,9 @@ function TimelineAnimation() {
   const aboutRef = useRef(null);
   const heroRef = useRef(null);
   return (
-    <>
+    <div className=''>
     <section
-      className="grid sm:grid-cols-2 gap-10 h-auto sm:h-[650px] pt-10  bg-black text-white px-8 md:px-20 "
+      className="grid sm:grid-cols-2 gap-10 h-auto sm:h-[650px] pt  text-white px-8 md:px-20  "
       ref={heroRef}
     >
       <TimelineContent animationNum={0} timelineRef={heroRef}>
@@ -44,7 +44,7 @@ function TimelineAnimation() {
       </div>
     </section>
   
-    <section ref={aboutRef} className="bg-black text-white/60 grid sm:grid-cols-2 gap-10 pb-10 px-8  md:px-20 py-20">
+    <section ref={aboutRef} className="text-white/60 grid sm:grid-cols-2 gap-10 pb-10 px-8  md:px-20 py-20">
       <div className="space-y-9">
         <TimelineContent animationNum={1} timelineRef={aboutRef}>
           <h1 className="text-3xl sm:text-5xl text-white">
@@ -79,7 +79,7 @@ function TimelineAnimation() {
         />
       </TimelineContent>
     </section>
-  </>
+  </div>
   
   );
 }
