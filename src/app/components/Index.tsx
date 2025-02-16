@@ -4,7 +4,7 @@ const ContactP = () => {
   return (
     <section
     id="contact"
-    className="overflow-hidden py-16 md:py-20 lg:py-44  -mt-11 bg-gradient-to-br   from-black via-gray-900 to-black "
+    className="overflow-hidden py-16 md:py-20 lg:py-44 pt-28 md:-mt-11 bg-gradient-to-br   from-black via-gray-900 to-black "
   >
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-wrap">

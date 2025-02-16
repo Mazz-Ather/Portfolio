@@ -71,7 +71,7 @@ const TextEffect = () => {
   return (
     <>
       <div
-        className={`reviews bg-black lg:px-16 md:px-10 py-0 md:py-16  lg:py-20 px-2 -mt-48 md:-mt-11 bg- w-full h-[40vh] lg:h-[85vh] ${
+        className={`reviews bg-black lg:px-16 md:px-10 py-0 pt-5 md:py-16  lg:py-20 px-2 -mt-48 md:-mt-11 bg- w-full h-[40vh] lg:h-[85vh] ${
           reviewVisible ? "visible" : "invisible"
         } w-full h-auto`}
         ref={reviewContainer}

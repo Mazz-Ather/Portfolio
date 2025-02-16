@@ -17,96 +17,94 @@ const Navbar = () => {
     { name: "home", route: "/" },
     { name: "About me", route: "/about" },
     { name: "my recent projects", route: "/projects" },
-    // { name: "skills", route: "/skills" },
     { name: "contact us", route: "/contact" }
   ];
 
-interface MenuItem {
+  interface MenuItem {
     current: HTMLAnchorElement | null;
-}
-
-interface MenuRefs {
-    current: HTMLDivElement | null;
-}
-
-interface VideoRef {
-    current: HTMLDivElement | null;
-}
-
-interface AnimateMenuProps {
-    isOpen: boolean;
-}
-
-const animateMenu = (isOpen: boolean) => {
-  if (isOpen) {
-    // Opening animations
-    gsap.from(menuContainer.current, {
-      height: 0,
-      duration: 1.2,
-      ease: "power",
-    });
-    gsap.from(menuContainerMobile.current, {
-      height: 0,
-      duration: 1.2,
-      ease: "power",
-    });
-    gsap.from(videoScale.current, {
-      scale: 0,
-      opacity: 0,
-      duration: 1,
-      ease: "power1",
-    });
-    gsap.from(
-      menuItemsText.current.filter((element) => element !== null), // Ensure no null refs
-      {
-        opacity: 0,
-        y: 100,
-        duration: 1,
-        stagger: 0.2,
-        ease: "back",
-      }
-    );
-    gsap.from(
-      menuItemsTextMobile.current.filter((element) => element !== null), // Ensure no null refs
-      {
-        opacity: 0,
-        delay: 0.7,
-        duration: 2,
-        stagger: 0.3,
-        ease: "ease",
-      }
-    );
-  } else {
-    // Closing animations
-    gsap.to(
-      menuItemsText.current.filter((element) => element !== null), // Animate text first
-      {
-        opacity: 0,
-        y: 100,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "back",
-      }
-    );
-    gsap.to(videoScale.current, {
-      scale: 0,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power1",
-    });
-    gsap.to(menuContainer.current, {
-      height: 0,
-      duration: 1,
-      ease: "power",
-    });
-    gsap.to(menuContainerMobile.current, {
-      height: 0,
-      duration: 1,
-      ease: "power",
-    });
   }
-};
 
+  interface MenuRefs {
+    current: HTMLDivElement | null;
+  }
+
+  interface VideoRef {
+    current: HTMLDivElement | null;
+  }
+
+  interface AnimateMenuProps {
+    isOpen: boolean;
+  }
+
+  const animateMenu = (isOpen: boolean) => {
+    if (isOpen) {
+      // Opening animations
+      gsap.from(menuContainer.current, {
+        height: 0,
+        duration: 1.2,
+        ease: "power",
+      });
+      gsap.from(menuContainerMobile.current, {
+        height: 0,
+        duration: 1.2,
+        ease: "power",
+      });
+      gsap.from(videoScale.current, {
+        scale: 0,
+        opacity: 0,
+        duration: 1,
+        ease: "power1",
+      });
+      gsap.from(
+        menuItemsText.current.filter((element) => element !== null), // Ensure no null refs
+        {
+          opacity: 0,
+          y: 100,
+          duration: 1,
+          stagger: 0.2,
+          ease: "back",
+        }
+      );
+      gsap.from(
+        menuItemsTextMobile.current.filter((element) => element !== null), // Ensure no null refs
+        {
+          opacity: 0,
+          delay: 0.7,
+          duration: 2,
+          stagger: 0.3,
+          ease: "ease",
+        }
+      );
+    } else {
+      // Closing animations
+      gsap.to(
+        menuItemsText.current.filter((element) => element !== null), // Animate text first
+        {
+          opacity: 0,
+          y: 100,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "back",
+        }
+      );
+      gsap.to(videoScale.current, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power1",
+      });
+      gsap.to(menuContainer.current, {
+        height: 0,
+        duration: 1,
+        ease: "power",
+      });
+      gsap.to(menuContainerMobile.current, {
+        height: 0,
+        duration: 1,
+        ease: "power",
+      });
+    }
+  };
 
   useEffect(() => {
     animateMenu(menuOpen);
@@ -114,11 +112,11 @@ const animateMenu = (isOpen: boolean) => {
 
   return (
     <>
-      <nav className=" lg:px-24 lg:py-10 px-6 py-8 bg-transparent absolute inset-0 z-10 max-w-[1920px] mx-auto ">
+      <nav className="px-11 w-auto overflow-x-hidden md:px-24 lg:py-10  py-8 bg-transparent absolute inset-0 z-10 max-w-[1920px] mx-auto ">
         <div className=" flex justify-between items-center ">
           <div className="logo">
             <Link href={'/'} className="text-[#4c6ad4]  contrast-200  lg:text-[1.6vw] md:text-[3vw] md:p-2 text-2xl font-lemon capitalize">
-            Mazz Ather
+              Mazz Ather
             </Link> 
           </div>
           <div className="menu-btn">
@@ -136,13 +134,13 @@ const animateMenu = (isOpen: boolean) => {
       {menuOpen && (
         <div
           ref={menuContainer}
-          className="menu px-24 pt-11 overflow-y-hidden lg:block md:block sm:hidden !bg-gradient-to-br from-black via-gray-950 to-black text-white
+          className="menu px-24 pt-11 overflow-y-hidden hidden lg:block md:block sm:hidden !bg-gradient-to-br from-black via-gray-950 to-black text-white
  z-[999] w-full lg:h-auto absolute  top-0 py-11 left-0 "
         >
           <div className="flex justify-between items-start">
             <div>
-              <Link href={'/'} className="text-secondary font-[rejoice-body] mb-2 lg:text-[1.6vw] md:text-[2vw] capitalize hidden md:block">
-            Mazz Ather
+              <Link href={'/'} className="text-secondary font-[rejoice-body] mb-2 lg:text-[1.6vw] md:text-[2vw] capitalize hidden md:block" onClick={openMenuHandler}>
+                Mazz Ather
               </Link>
               <div
                 className="lg:w-[400px] hidden md:block lg:h-[250px] md:w-[300px] md:h-[200px] object-cover"
@@ -177,6 +175,7 @@ const animateMenu = (isOpen: boolean) => {
                             data-hover={item.name}
                             key={index}
                             href={item.route}
+                            onClick={openMenuHandler}
                             className="text-tertiary menu-text font-[rejoice-body] text-[3.3vw]  capitalize  "
                             ref={(element) => {
                               menuItemsText.current[index] = element;
@@ -190,10 +189,10 @@ const animateMenu = (isOpen: boolean) => {
                   </div>
                 </div>
                 <Link href={'/contact'}
-  className="bg-transparent border border-[#F7E7CE] px-3 mt-4 ml-0 lg:ml-6 py-3 rounded-sm text-tertiary font-[rejoice-body] lg:text-[16px] md:text-[1.5vw] capitalize hover:bg-[#0734d7] hover:text-white transition-all duration-300 ease-in-out">
-  contact us now!
-</Link>
-
+                  onClick={openMenuHandler}
+                  className="bg-transparent border border-[#F7E7CE] px-3 mt-4 ml-0 lg:ml-6 py-3 rounded-sm text-tertiary font-[rejoice-body] lg:text-[16px] md:text-[1.5vw] capitalize hover:bg-[#0734d7] hover:text-white transition-all duration-300 ease-in-out">
+                  contact us now!
+                </Link>
               </div>
               <div className="close">
                 <a
@@ -206,13 +205,6 @@ const animateMenu = (isOpen: boolean) => {
             </div>
           </div>
 
-          {/* <div className="w-[90vw] px-2 h-fit">
-  <div className="w-[90vw] !px-0">
-    <UnderLine marginBottom="1vw" marginTop="1vw" />
-  </div>
-</div> */}
-
-                 
           <div className="pt-3  mt-8 border-t border-tertiary flex justify-between items-center ">
             <div className=" mt-4">
               <h6 className="text-muted font-analogy font-semibold lg:text-[1.5vw] md:text-[2vw] capitalize">
@@ -220,13 +212,10 @@ const animateMenu = (isOpen: boolean) => {
               </h6>
             </div>
             <div className=" flex justify-center items-center gap-6 mt-4">
-              {/* <h6 className=" text-muted font-[rejoice-body] lg:text-[1.4vw] md:text-[2vw] capitalize">
-                x
-              </h6> */}
-              <Link href={'https://github.com/mazz-ather'} className=" text-muted font-[rejoice-body] lg:text-[1.4vw] md:text-[2vw] capitalize">
+              <Link href={'https://github.com/mazz-ather'} className=" text-muted font-[rejoice-body] lg:text-[1.4vw] md:text-[2vw] capitalize" onClick={openMenuHandler}>
                Github
               </Link>
-              <Link href={'https://www.linkedin.com/in/mazz-ather'} className=" text-muted font-[rejoice-body]  lg:text-[1.4vw] md:text-[2vw] capitalize">
+              <Link href={'https://www.linkedin.com/in/mazz-ather'} className=" text-muted font-[rejoice-body]  lg:text-[1.4vw] md:text-[2vw] capitalize" onClick={openMenuHandler}>
                 linkedin
               </Link>
             </div>
@@ -234,20 +223,20 @@ const animateMenu = (isOpen: boolean) => {
         </div>
       )}
 
-      {/* {mobile navbar code} */}
+      {/* mobile navbar code */}
       <div className="mobile__navbar lg:hidden md:hidden">
         {menuOpen && (
           <div
             ref={menuContainerMobile}
-            className="menu px-4 py-6 overflow-y-hidden bg-gradient-to-br from-black via-gray-900 to-black text-white
+            className="menu px-20 py-6 overflow-y-hidden bg-gradient-to-br from-black via-gray-900 to-black text-white
  cursor-pointer w-full h-full absolute z-20 top-0 left-0 flex justify-between items-start flex-col"
           >
             <div className="mobile__header w-full flex justify-between items-center overflow-y-hidden">
               <div className="logo text-2xl text-secondary">
-                <Link href={'/'}>
-                Mazz Ather
+                <Link href={'/'} onClick={openMenuHandler}>
+                  Mazz Ather
                 </Link>
-                </div>
+              </div>
               <div
                 onClick={openMenuHandler}
                 className="close__icon border border-muted flex justify-center  font-light items-center rounded-full w-14 text-3xl text-center h-14  text-background"
@@ -261,6 +250,7 @@ const animateMenu = (isOpen: boolean) => {
                   data-hover={item.name}
                   key={index}
                   href={item.route}
+                  onClick={openMenuHandler}
                   className="text-tertiary menu-text font-[rejoice-body] lg:text-[3.3vw] p-1 text-5xl capitalize "
                   ref={(element) => {
                     menuItemsTextMobile.current[index] = element;
@@ -271,13 +261,10 @@ const animateMenu = (isOpen: boolean) => {
               ))}
             </div>
             <div className="social-links w-full flex justify-start items-start flex-col overflow-y-hidden">
-              {/* <li className="text-muted  font-[rejoice-body] lg:text-[1.2vw] text-xl capitalize list-none decoration-none cursor">
-                x
-              </li> */}
-              <Link href={'https://github.com/mazz-ather'} className="text-muted font-[rejoice-body] lg:text-[1.2vw] text-xl capitalize list-none decoration-none">
+              <Link href={'https://github.com/mazz-ather'} onClick={openMenuHandler} className="text-muted font-[rejoice-body] lg:text-[1.2vw] text-xl capitalize list-none decoration-none">
                 Github
-              </Link>{""}
-              <Link href={'https://www.linkedin.com/in/mazz-ather'} className="text-muted font-[rejoice-body] lg:text-[1.2vw] text-xl capitalize list-none decoration-none">
+              </Link>
+              <Link href={'https://www.linkedin.com/in/mazz-ather'} onClick={openMenuHandler} className="text-muted font-[rejoice-body] lg:text-[1.2vw] text-xl capitalize list-none decoration-none">
                 linkedin
               </Link>
             </div>

@@ -78,7 +78,7 @@ const Services = () => {
       className="relative h-auto py-11 flex items-center bg-black justify-center"
       ref={mainRef}
     >
-      <div className="flex text-white flex-col w-[80%] mx-auto">
+      <div className="flex text-white  flex-col w-[80%] mx-auto">
         {projects.map((project, index) => (
           <Project
             key={index}

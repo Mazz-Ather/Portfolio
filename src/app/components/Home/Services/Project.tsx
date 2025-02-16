@@ -16,12 +16,12 @@ const Project = ({
 }: ProjectProps) => {
   return (
     <div
-      className="h-[20vh] border-y w-full bg-black/90 text-white flex items-center justify-center group first-of-type:border-t-0 last-of-type:border-b-0"
+      className="h-[20vh] border-y w-full text-xl bg-black/90 text-white flex items-center justify-center group first-of-type:border-t-0 last-of-type:border-b-0"
       onMouseEnter={() => setCurrentProject({ active: true, index })}
       onMouseLeave={() => setCurrentProject({ active: false, index })}
     >
-      <div className="flex items-center justify-between w-full mx-20 group-hover:mx-24 transition-[margin] duration-200">
-        <h1 className="text-6xl  group-hover:text-slate-500 transition-colors">
+      <div className="flex items-center justify-between w-auto mx-20 group-hover:mx-24 transition-[margin] duration-200">
+        <h1 className="text-4xl md:text-6xl  group-hover:text-slate-500 transition-colors">
           {title}
         </h1>
         {/* <span className="text-slate-500 text-xl group-hover:text-slate-300 transition-colors">
